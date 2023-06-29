@@ -1,0 +1,1 @@
+export { ConsultationIndex as default } from './ConsultationIndex';

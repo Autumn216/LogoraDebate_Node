@@ -1,0 +1,187 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+
+:global(.logoraContainer) {
+    .container {
+        border: $box-border;
+        box-shadow: $box-shadow;
+        border-radius: $box-border-radius;
+        @include mr(0, xs);
+        @include mr(2, sm);
+        @include mb(0, xs);
+        @include mt(3, xs);
+        @include px(0, xs);
+        background-color: white;
+        &.isAnswered {
+            display: none;
+        }
+    }
+
+    .title {
+        font-size: $font-size-normal;
+        font-weight: $font-weight-bold;
+        @include p(3, xs);
+        @include py(2, xs);
+    }
+
+    .user {
+        @include m(3, xs);
+        @include mb(4, xs);
+        @include p(3, xs);
+        @include display(flex, xs);
+        position: relative;
+        color: white;
+        border-radius: $box-border-radius;
+        &.position-1 {
+            background-color: $for-primary;
+        }
+        &.position-2 {
+            background-color: $against-primary;
+        }
+        .userImage {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+        .userInfo {
+            @include ml(2, xs);
+            width: 100%;
+            overflow-x: hidden;
+            font-size: $font-size-small;
+        }
+        .userName {
+            white-space: nowrap;
+            font-weight: $font-weight-bold;
+        }
+        .userPoint {
+            @include display(flex, xs);
+            @include align-items(center, xs);
+            svg {
+                @include ml(1, xs);
+                fill: white;
+                circle {
+                    stroke: white;
+                }
+            }
+        }
+        .positions {
+            @include px(2, xs);
+            @include py(1, xs);
+            position: absolute;
+            left: 12px;
+            bottom: -10px;
+            background-color: white;
+            color: $second-position-color-primary;
+            text-transform: uppercase;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-extra-small;
+            border: 1px solid;
+            border-radius: $box-border-radius;
+            &.position-1 {
+                color: $for-primary;
+                border-color: $for-primary;
+            }
+            &.position-2 {
+                color: $against-primary;
+                border-color: $against-primary;
+            }
+        }
+    }
+
+    .footer {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include p(3, xs);
+        @include py(3, xs);
+        color: white;
+        font-size: $font-size-small;
+        .text {
+            @include p(1, xs);
+            border-radius: $box-border-radius 0 0 $box-border-radius;
+            border: 1px solid $text-secondary;
+            background-color: $text-secondary;
+        }
+        .status {
+            @include p(1, xs);
+            border-radius: 0 $box-border-radius 0;
+            border: 1px solid $text-secondary;
+            color: $text-secondary;
+        }
+    }
+
+    .cancel {
+        @include p(3, xs);
+        @include py(1, xs);
+        color: $text-secondary;
+        background-color: $text-tertiary;
+        border-radius: 0 0 $box-border-radius;
+        cursor: pointer;
+        text-align: center;
+        &:hover {
+            opacity: .8;
+        }
+        &.isDeleted {
+            cursor: initial;
+        }
+        &.isDeleted:hover {
+            opacity: 1;
+        }
+        .cancelText {
+            font-size: $font-size-small;
+            text-decoration: underline;
+        }
+    }
+
+    .buttonBox {
+        @include display(flex, xs);
+        @include m(3, xs);
+        @include mb(2, xs);
+        text-align: center;
+        gap: 1em;
+    }
+    
+    .button {
+        @include px(2, xs);
+        @include py(1.5, xs);
+        flex: 1;
+        border-radius: $box-border-radius;
+        border: 1px solid;
+        cursor: pointer;
+        &.accept {
+          background-color: $success-primary;
+          border-color: $success-primary;
+          color: white;
+        }
+        &.reject {
+          background-color: $cancel-primary;
+          border-color: $cancel-primary;
+          color: white;
+        }
+        &:hover {
+          filter: brightness(110%);
+        }
+    }
+
+    .isAnswered {
+        @include px(2, xs);
+        @include py(1.5, xs);
+        @include m(3, xs);
+        border-radius: $box-border-radius;
+        background-color: $cancel-primary;
+        color: white;
+        text-align: center;
+        > span {
+            font-size: $font-size-extra-small;
+        }
+        &.isDeleted {
+            @include mx(0, xs);
+            @include my(2, xs);
+        }
+        &.isAccepted {
+            background-color: $success-primary;
+        }
+    }
+}

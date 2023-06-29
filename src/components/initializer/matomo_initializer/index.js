@@ -1,0 +1,1 @@
+export { MatomoInitializer } from './MatomoInitializer';

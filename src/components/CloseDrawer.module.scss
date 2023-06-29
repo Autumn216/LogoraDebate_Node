@@ -1,0 +1,52 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .drawer {
+        @include px(2, xs);
+        @include pt(3, xs);
+        overflow: auto;
+        width: 60vw !important;
+        @include media-breakpoint-down(sm) {
+            width: 99% !important;
+        }
+    }
+
+    .closeDrawer {
+        position: fixed;
+        top: 4px;
+        right: 59vw;
+        @include display(flex, xs);
+        @include justify-content(center, xs);
+        @include align-items(center, xs);
+        background-color: white;
+        border-radius: 50%;
+        z-index: 400;
+        width: 30px;
+        height: 30px;
+        font-size: $font-size-small;
+        box-shadow: $box-shadow;
+        cursor: pointer;
+        transition: right 475ms;
+        svg {
+            path, circle {
+              fill: $call-primary;
+              &:last-child {
+                fill: white !important;
+              }
+            }
+          }
+        @include media-breakpoint-down(sm) {
+            left: 4px;
+            transition: top 480ms;
+        }
+    }
+
+    .hideButton {
+        visibility: hidden;
+        right: 0px;
+        top: 100px;
+    }
+}

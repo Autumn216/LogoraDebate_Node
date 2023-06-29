@@ -1,0 +1,69 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .container {
+        @include display(flex, xs);
+        @include flex-direction(row, md);
+        @include flex-direction(column, xs);
+    }
+
+    .suggestionBox {
+        flex-grow: 2;
+    }
+
+    .ctaBox {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include align-items(center, xs);
+        @include justify-content(center, xs);
+        @include mt(4, xs);
+        @include mt(0, md);
+        flex-grow: 3;
+        color: $text-secondary;
+        .button {
+            @include display(flex, xs);
+            @include align-items(center, xs);
+            @include px(4, md);
+            @include py(2, xs);
+            @include mt(2, xs);
+            cursor: pointer;
+            width: fit-content;
+            background-color: $call-primary;
+            color: white;
+            border-radius: $box-border-radius;
+            text-transform: uppercase;
+            font-size: $font-size-small;
+            font-weight: $font-weight-bold;
+            svg {
+                @include ml(1, xs);
+                rotate: 180deg;
+                fill: white;
+            }
+            &:hover {
+                filter: brightness(110%);
+            }
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                @include justify-content(center, xs);
+            }
+            &.disabled {
+                cursor: not-allowed;
+                background: $text-tertiary !important;
+                color: $text-secondary !important;
+                svg {
+                    fill: $text-secondary !important;
+                }
+                &:hover {
+                    filter: brightness(100%) !important;
+                }
+            }
+        }
+    }
+    .pointsRestriction {
+        @include pt(1, xs);
+        font-size: $font-size-extra-small;
+    }
+}

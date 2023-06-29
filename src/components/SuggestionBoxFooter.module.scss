@@ -1,0 +1,165 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) { 
+    .container {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        &.containerIsMobile {
+            @include align-items(flex-start, xs);
+            @include flex-wrap(xs);
+        }
+        &.isSelected {
+            @include flex-direction(row, xs);
+            @include justify-content(space-between, xs);
+        }
+        .questionContainer {
+            .voteButton {
+                @include px(3, xs);
+                @include py(3, xs);
+                &:hover {
+                    filter: brightness(110%);
+                }
+            }
+            &.notSelected {
+                @include display(flex, xs);
+                @include align-items(center, xs);
+                @include px(3, xs);
+                @include py(2, xs);
+                width: 100%;
+                .voteText {
+                    @include mr(2, xs);
+                    font-size: $font-size-small;
+                }
+            }
+        }
+        .voteContainer {
+            @include display(flex, xs);
+            @include align-items(center, xs);
+            @include justify-content(space-between, xs);
+            @include px(3, xs);
+            @include py(2, xs);
+            &.voteFullWidth {
+                width: 100%;
+            }
+            .userProgress {
+                font-size: $font-size-small;
+                svg {
+                    @include mx(1, xs);
+                    @include mb(1, xs);
+                }
+            }
+        }
+        
+        .hideElement {
+            display: none;
+        }
+
+        .linkToDebate {
+            min-width: 106px;
+            @include py(2, xs);
+            @include px(3, xs);
+            @include mr(2, xs);
+            cursor: pointer;
+            border: $box-border;
+            border-radius: $box-border-radius;
+            background-color: $call-primary;
+            color: white;
+            font-size: $font-size-small;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .progressBarContainer {
+            position: relative;
+            flex: 1;
+            @include mr(2, xs);
+            max-width: 80%;
+            .suggestionProgress {
+                @include mt(1, xs);
+                height: 12px;
+                width: 100%;
+                border-radius: $box-border-radius;
+                background-color: $background-color-secondary !important;
+            }
+            .bar {
+                background-color: $info-primary;
+            }
+            &.progressBarSelected {
+                width: 70%;
+                flex: none;
+                @include mb(0, xs);
+            }
+            &::before {
+                content: "+1";
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                width: 30px;
+                height: 15px;
+                border-radius: $box-border-radius;
+                border: 1px solid;
+                opacity: 0;
+                background-color: $info-primary;
+                border-color: $info-primary;
+                color: white;
+                font-size: $font-size-extra-small;
+                padding-left: 8px;
+                padding-bottom: 15px;
+            }
+            &.active::before {
+                animation-duration: 1s;
+                animation-name: upvote;
+                animation-iteration-count: 1;
+            }
+        }
+
+        .goals {
+            color: $text-secondary;
+            font-size: $font-size-extra-small;
+            > span {
+            font-size: $font-size-small;
+            color: $text-primary;
+            }
+        }
+
+        .actionsContainer {
+            &.actionsContainerSelected {
+                @include mt(1, xs);
+            }
+            .dropdownItem {
+                @include p(2, xs);
+                cursor: pointer;
+            }
+        
+            .dropdownItem:hover  {
+                color: $call-primary;
+            }
+        }
+    }
+    svg {
+        display: inline-block;
+    }
+
+    @keyframes upvote {
+        0% {
+            transform: translateX(50%);
+            opacity: 0;
+        }
+      
+        50% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(50%);
+            opacity: 0;
+        }
+    }
+}

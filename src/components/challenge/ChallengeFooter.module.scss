@@ -1,0 +1,133 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .userImageBackground {
+        @include display(flex, xs);
+        @include justify-content(center, xs);
+    }
+
+    .userImageFooter {
+        @include mr(2, xs);
+        .smallUserImage {
+            min-width: 25px;
+            min-height: 25px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid $for-primary;
+            border-color: $against-primary;
+            &.firstUserPosition {
+                border-color: $for-primary;
+            }
+        }
+    }
+
+    .userImage {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .emptyUserImage {
+        @include mr(2, xs);
+        height: 25px !important;
+        width: 25px !important;
+        max-width: none;
+        border-radius: 50%;
+        background: $darken-text-tertiary;
+    }
+
+    .versusPhase {
+        @include py(1.5, xs);
+        @include px(2.5, xs);
+        @include mr(2, xs);
+        border-radius: $box-border-radius;
+        color: white;
+        font-size: $font-size-small;
+    }
+
+    .debatePhase {
+        background-color: $call-primary;
+    }
+
+    .unstartedPhase {
+        background-color: $text-secondary;
+    }
+
+    .votePhase {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        color: white;
+        font-size: $font-size-small;
+        .voteText {
+            @include p(1, xs);
+            border-radius: $box-border-radius 0 0 $box-border-radius;
+            border: 1px solid $success-primary;
+            background-color: $success-primary;
+        }
+        .voteTimeText {
+            @include py(1, xs);
+            @include px(2, xs);
+            border-radius: 0 $box-border-radius 0;
+            border: 1px solid $success-primary;
+            color: $success-primary;
+        }
+    }
+
+    .votesCount {
+        @include ml(2, xs);
+        font-size: $font-size-extra-small;
+        color: $text-secondary;
+        &.votesCountFinished {
+            @include mr(2, xs);
+            @include ml(0, xs);
+        }
+    }
+
+    .finishedPhase {
+        background-color: $text-secondary;
+    }
+
+    .challengeBoxFooter {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include align-items(center, xs);
+        @include flex-wrap(xs);
+        width: 100%;
+        font-size: $font-size-small;
+        .footerText::first-letter {
+            text-transform: uppercase;
+        }
+        &.zeroPaddingBox {
+            @include p(0, xs);
+        }
+    }
+
+    .left {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include align-items(center, xs);
+    }
+
+    .right {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+    }
+
+    .timeLeft {
+        font-size: $font-size-small;
+        color: $text-secondary;
+        @include display(flex, xs);
+        @include align-items(center, xs);
+    }
+    
+    .footerText {
+        @include display(flex, xs);
+    }
+}

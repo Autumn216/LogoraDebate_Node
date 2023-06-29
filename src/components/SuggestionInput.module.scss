@@ -1,0 +1,126 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) { 
+    .suggestionInputContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include mt(4, xs);
+        color: $text-primary;
+    }
+
+    .suggestionInputItem {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+    }
+
+    .suggestionInputTitle {
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        position: relative;
+        width: max-content;
+    }
+
+    .suggestionInputSubtitle {
+        font-size: $font-size-extra-small;
+    }
+
+    .suggestionInputWarning {
+        font-size: $font-size-extra-small;
+        color: $cancel-primary;
+        @include mb(3, xs);
+      }
+
+    .suggestionInput, .suggestionInputContent {
+        height: 40px;
+        width: 100%;
+        @include px(2, xs);
+        @include py(2, xs);
+        @include mt(3, xs);
+        @include mb(2, xs);
+        background-color: white;
+        box-shadow: $box-shadow;
+        border: $box-border;
+        border-radius: $box-border-radius;
+        z-index: 1;
+        -webkit-transition: box-shadow 0.8s ease-in-out;
+        -moz-transition: box-shadow 0.8s ease-in-out;
+        -o-transition: box-shadow 0.8s ease-in-out;
+        transition: box-shadow 0.8s ease-in-out;
+    
+        &:hover, &:focus-within, &:focus-visible {
+            box-shadow: 0 0 5px $darkest-text-tertiary !important;
+        }
+
+        &.flash, &.flash:hover, &.flash:focus-within {
+            box-shadow: 0 0 15px $call-primary !important;
+        }
+    }
+
+    .suggestionInputSubmit {
+        width: max-content;
+        @include px(5, xs);
+        @include mt(3, xs);
+        &:hover {
+            opacity: .9;
+        }
+    }
+
+    .suggestionInputError {
+        border: 1px solid $cancel-primary !important;
+    }
+
+    // If disabled
+    .suggestionInputDisabled {
+        opacity: .5;
+        .suggestionInputSubmit {
+            &:hover {
+                cursor: not-allowed;
+                opacity: initial;
+            }
+        }
+    }
+
+    .suggestionInputIsDisabled {
+        background-color: rgb(230, 230, 230);
+    }
+
+    .annoucementSuggestion {
+        @include mt(1, xs);
+    }
+
+    .pointsRestriction {
+        @include mb(1.5, xs);
+        svg {
+            @include ml(1, xs);
+        }
+        .userPoints {
+            font-weight: $font-weight-bold;
+        }
+        .pointsText {
+            @include mr(1, xs);
+        }
+    }
+
+    .pointsInformations {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include mt(1, xs);
+        color: $call-primary;
+        font-size: $font-size-small;
+        width: fit-content;
+        svg {
+            @include mr(1, xs);
+            fill: $call-primary;
+            overflow: visible;
+            path {
+                fill: white;
+            }
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

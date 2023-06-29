@@ -1,0 +1,20 @@
+---
+description: A React component to embed a consultation.
+labels: ['consultation', 'embed']
+---
+
+import { ConsultationEmbed } from './ConsultationEmbed';
+
+A React component to embed a consultation in any webpage.
+It displays the title of the consultation, the top proposal, and a call-to-action to access the consultation.
+It must be wrapped by react-intl's IntlProvider, by ConfigProvider and by a router from react-router.
+
+### Component usage
+```js
+    import { ConsultationEmbed } from '@logora/debate.consultation.consultation_embed';
+```
+```js
+<ConsultationEmbed 
+    consultation={consultation}
+/>
+```

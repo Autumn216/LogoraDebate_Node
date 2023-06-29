@@ -1,0 +1,253 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+
+  .modalSubtitle {
+    color: $text-secondary;
+    @include mb(4, xs);
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+  }
+
+  .sectionTitle {
+    @include mb(1, xs);
+    font-weight: $font-weight-bold;
+  }
+
+  .titleInfo {
+    @include mb(2, xs);
+    font-size: $font-size-extra-small;
+    color: $text-secondary;
+  }
+
+  .selectForDebate {
+    z-index: 201;
+  }
+
+  .selectForUser {
+    z-index: 200;
+  }
+
+  .argumentContainer {
+    @include mb(4, xs);
+  }
+
+  .positionBox {
+    @include display(flex, xs);
+    @include justify-content(flex-start, xs);
+    @include align-items(center, xs);
+    @include flex-direction(row, xs);
+    @include pt(3, xs);
+  }
+
+  .thesisContainer, .title {
+    @include pb(3, xs);
+  }
+
+  .positionItem {
+    @include mr(2, xs);
+    font-weight: $font-weight-bold;
+    &.positionItemBox {
+      @include display(flex, xs);
+    }
+  }
+
+  .noPositions {
+    font-size: $font-size-extra-small;
+    font-weight: $font-weight-normal;
+    color: $text-secondary;
+  }
+
+  .positionChoice {
+    @include mr(3, xs);
+    @include p(2, xs);
+    border: 1px solid $text-secondary;
+    border-radius: $box-border-radius;
+    text-transform: uppercase;
+    cursor: pointer;
+    &.position-1 {
+      color: $for-primary;
+      &:hover, &.isActive {
+        color: white !important;
+        background-color: $for-primary;
+        border-color: $for-primary;
+      }
+    }
+    &.position-2 {
+      color: $against-primary;
+      &:hover, &.isActive {
+        color: white !important;
+        background-color: $against-primary;
+        border-color: $against-primary;
+      }
+    }
+    &.positionChoiceIsArgument {
+      cursor: initial;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .opponentHeaderContainer{
+    @include pt(3, xs);
+    .header {
+      @include display(flex, xs);
+      @include flex-direction(row, xs);
+      @include justify-content(flex-start, xs);
+      > .opponentTitle {
+        margin-right: auto;
+        width: 100%;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  .opponentContainer {
+    @include p(3, xs);
+    @include mt(3, xs);
+    @include mb(4, xs);
+    text-align: justify;
+    border: $box-border;
+    box-shadow: $box-shadow;
+    border-radius: $box-border-radius;
+    &.opponentContainerMargin {
+      @include mb(2, xs);
+    }
+    &.opponentContainerHide {
+      display: none;
+    }
+  }
+
+  .warningText {
+    @include display(flex, xs);
+    @include align-items(center, xs);
+    @include mt(2.5, xs);
+    @include p(2, xs);
+    background-color: $cancel-primary !important;
+    border-radius: $box-border-radius;
+    color: white !important;
+    font-size: $font-size-small;
+    svg {
+      @include mr(2, xs);
+      flex-shrink: 0;
+      circle {
+        stroke: white !important;
+      }
+      path {
+        fill: white !important;
+      }
+    }
+  }
+
+  .infoText {
+    @include mt(2, xs);
+    color: $text-secondary;
+    font-size: $font-size-extra-small;
+    text-decoration: underline;
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .userPointsDisclaimer {
+    @include display(flex, xs);
+    @include align-items(center, xs);
+    svg {
+      path {
+        fill: white !important;
+      }
+    }
+  }
+
+  .noOpponent {
+    @include p(3, xs);
+    border: 1px solid $text-secondary;
+    border-radius: $box-border-radius;
+    background: $background-color-secondary;
+  }
+
+  .textLink {
+    @include ml(2, xs);
+    color: $text-secondary;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  .actionsContainer {
+    @include mt(3, xs);
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include justify-content(center, xs);
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  .actionsDivider {
+    @include my(3, xs);
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .actionButton {
+    @include p(2, xs);
+    &.buttonDisabled {
+      cursor: not-allowed !important;
+    }
+  }
+
+  .modalContent {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include align-items(center, xs);
+    @include justify-content(center, xs);
+    text-align: center;
+    @include my(2, xs);
+    @include p(0, xs);
+  }
+
+  .hint {
+    font-size: $font-size-small;
+    color: $text-secondary;
+    @include mt(2, xs);
+  }
+
+  .argumentInput {
+    width: 100%;
+    min-height: 100px;
+    position: relative;
+    @include px(2, xs);
+    @include py(2, xs);
+    @include mt(2, xs);
+    background-color: white;
+    box-shadow: $box-shadow;
+    border: $box-border;
+    border-radius: $box-border-radius;
+  }
+
+  .inputDisabled {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    @include display(flex, xs);
+    @include justify-content(center, xs);
+    @include align-items(center, xs);
+    opacity: 0.9;
+    background: $text-tertiary;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .sectionFirstArgument {
+    @include mt(4, xs);
+  }
+}

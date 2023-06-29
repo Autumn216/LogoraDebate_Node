@@ -1,0 +1,44 @@
+---
+description: A select input component.
+labels: ['select', 'input', 'dropdown']
+---
+
+import { Select } from './Select';
+
+A component that renders a select component with arrow and check icons.
+
+Select options are passed as objects. An option can have keys : *dataTid, name, value* and *textKey*.
+
+Select is closed when user clicks outside it. A click on any child from the list also close the list.
+
+### Component usage
+```js
+import Select from '@logora/debate.input.select';
+```
+```js
+<Select  
+    options={([{
+        name: "Most recent", {/* required */}
+        value: "trending", {/* required */}
+        text: "Sort by newest", {/* required */}
+        dataTid: "action_sort_arguments_newest" {/* optional */}
+    },
+    {
+        name: "Most relevant",
+        value: "-created_at",
+        text: "Sort by oldest",
+        dataTid: "action_sort_arguments_relevant",
+    }])}
+    onChange={(option) => console.log(option)}
+/>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>options</font> | <font color="#397300">array</font> | &check; | - | <font color="grey">*array of options*</font> |
+| <font color='#4646c6'>displayOptionValue</font> | <font color="#397300">integer, string</font> | &cross; | - | <font color="grey">*value of the option's key value to be displayed at first*</font> |
+| <font color='#4646c6'>resetSelect</font> | <font color="#397300">boolean</font> | &cross; | - | <font color="grey">*reset selected option*</font> |
+| <font color='#4646c6'>onChange</font> | <font color="#397300">callback function</font> | &cross; | - | <font color="grey">*callback function triggered when clicking on an option*</font> |
+| <font color='#4646c6'>selectClassName</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*extra css class to pass on the dropdown select*</font> |
+| <font color='#4646c6'>optionClassName</font> | <font color="#397300">boolean</font> | &cross; | - | <font color="grey">*extra css class to pass on the options*</font> |

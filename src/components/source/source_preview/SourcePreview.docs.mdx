@@ -1,0 +1,31 @@
+---
+description: A preview for sources.
+---
+
+import { SourcePreview } from './SourcePreview';
+
+A component that renders a preview for sources.
+
+
+### Component usage
+```js
+    import { SourcePreview } from '@logora/debate.source.source_preview';
+```
+```js
+    <SourcePreview 
+        source={{ 
+            publisher: 'Le Canard Enchaîné', 
+            title: 'La Fifa multiplie fautes et coups pas francs', 
+            description: "Pour complaire au Qatar, les instances du foot banissent la bière.",
+            source_url: 'http://example.com/source',
+            origin_image_url: 'https://picsum.photos/536/354',
+        }} 
+        showLoader={false} 
+    />
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>source</font> | <font color="#397300">object</font> | &check; | - | <font color="grey">*source to be previewed*</font> |
+| <font color='#4646c6'>showLoader</font> | <font color="#397300">boolean</font> | &check; | - | <font color="grey">*define loading state of the preview*</font> |

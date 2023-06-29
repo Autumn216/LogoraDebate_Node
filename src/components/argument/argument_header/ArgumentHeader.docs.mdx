@@ -1,0 +1,43 @@
+---
+description: A component to display a user content's header with author, category and date.
+tags: ['argument', 'header', 'debate', 'user-content']
+---
+
+import { ArgumentHeader } from './ArgumentHeader';
+
+The ArgumentHeader component is used to display the header of a user content, including the author's avatar, name, points, and the content's category and date.
+It uses [ConfigProvider](https://bit.cloud/logora/debate/context/config_provider) for routing.
+
+It should be wrapped with react-intl's IntlProvider, ConfigProvider and be inside a Router.
+
+### Component usage
+
+```js
+import { ArgumentHeader } from '@logora/debate.argument.header';
+```
+
+```js
+import { ArgumentHeader } from './ArgumentHeader';
+
+const author = {
+  slug: 'john-doe',
+  full_name: 'John Doe',
+  image_url: 'https://example.com/avatar.jpg',
+  points: 53
+};
+
+<ArgumentHeader author={author} tag={"my-tag"} date={new Date()} />
+```
+
+### Properties
+
+```
+| Prop name        | Type     | Required | Default | Description                                                                                                          |
+| ---------------- | -------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
+| `author`         | object   | Yes      | -       | An object containing the `full_name`, `image_url`, `slug` and `points` of the author.                                   |
+| `tag`            | string   | No       | -       | The tag associated with the argument.                                                                                |
+| `tagClassName`   | string   | No       | -       | A custom class name for the tag container.                                                                           |
+| `date`           | string   | No       | -       | The date the argument was posted.                                                                                    |
+| `hideDate`       | boolean  | No       | `false` | Hides the argument's date if set to `true`.                                                                          |
+| `oneLine`        | boolean  | No       | `false` | Renders the author box in a single line if set to `true`.                                                            |
+| `disableLinks`   | boolean  | No       | `false` | Disables the links to the author profile if set to `true`.                                                           |

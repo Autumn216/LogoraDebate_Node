@@ -1,0 +1,1 @@
+export { SSOForm as default } from './SSOForm';

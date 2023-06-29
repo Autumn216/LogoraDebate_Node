@@ -1,0 +1,1 @@
+export { ProposalBlankBox } from './ProposalBlankBox';

@@ -1,0 +1,39 @@
+---
+description: A modal to display ShareBox component.
+labels: ['modal']
+---
+
+import { ShareModal } from './ShareModal';
+import { ModalProvider } from '@logora/debate.dialog.modal';
+import { IntlProvider } from 'react-intl';
+
+A modal component that displays the ShareBox component.
+
+### Component usage
+```js
+    import { ShareModal } from "@logora/debate.share.share_modal";
+```
+```js
+    <IntlProvider locale="en">
+        <ModalProvider>
+            <ShareModal 
+                shareUrl="https://app.logora.fr/share/p/48656"
+                shareText="Text"
+                shareTitle="Title"
+                title="Modal Title"
+                shareCode='<iframe src="https://api.logora.fr/embed.html?shortname="[...]'
+                showShareCode={true}
+            />
+        </ModalProvider>
+    </IntlProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>shareUrl</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*sharing url*</font> |
+| <font color='#4646c6'>shareText</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*text to show on sharing action*</font> |
+| <font color='#4646c6'>shareTitle</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*title to show on sharing action*</font> |
+| <font color='#4646c6'>title</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*title passed to modal*</font> |
+| <font color='#4646c6'>shareCode</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*code to copy when clicking ShareBox embed*</font> |
+| <font color='#4646c6'>showShareCode</font> | <font color="#397300">boolean</font> | &cross; | - | <font color="grey">*display share code*</font> |

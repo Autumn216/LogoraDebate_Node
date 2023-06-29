@@ -1,0 +1,29 @@
+---
+description: A stylized list element for argument sources.
+---
+
+import { SourceListItem } from './SourceListItem';
+
+A component that renders a stylized list element for argument sources.
+
+### Component usage
+```js
+    import SourceListItem from '@logora/debate.source.source_list_item';
+```
+
+```js
+    <SourceListItem 
+        publisher={"source.com"} 
+        url={"https://source.com"} 
+        title={"Source list item component"} 
+        index={0}
+    />
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>publisher</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*name of source publisher*</font> |
+| <font color='#4646c6'>url</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*source url*</font> |
+| <font color='#4646c6'>title</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*source title*</font> |
+| <font color='#4646c6'>index</font> | <font color="#397300">number</font> | &check; | - | <font color="grey">*item index in list, starting at 0*</font> |

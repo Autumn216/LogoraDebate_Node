@@ -1,0 +1,50 @@
+---
+description: A form to login or signup by Facebook, Google or email.
+labels: ['auth', 'form', 'login', 'social', 'oauth2']
+---
+
+import { SocialAuthForm } from './SocialAuthForm';
+import { MemoryRouter } from "react-router";
+import { IntlProvider } from "react-intl";
+
+Component to login or signup by Facebook, Google or email. Provides a consent checkbox and forgot password link.
+
+A callback function _onSubmit_ is available to retrieve the form submit data.
+
+### Component usage
+```js
+import SocialAuthForm from '@logora/debate.auth.social_auth_form';
+```
+```js
+    <MemoryRouter>
+        <IntlProvider locale="en">
+            <SocialAuthForm 
+                onSubmit={(data, authType, lastStep, consent) => console.log(data) }
+                facebookClientId={"facebook-client-id"}
+                googleClientId={"google-client-id"}
+                oAuthRedirectUri={"https://redirect-uri.com"} 
+                logoUrl={"https://picsum.photos/200"}
+                providerName={"My company"}
+                termsUrl={"https://example.com/terms"}
+                privacyUrl={"https://example.com/privacy"}
+                forgotPasswordUrl={"http://example.com/forgot_password"} 
+                error={false}
+            />
+        </IntlProvider>
+    </MemoryRouter>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>onSubmit</font> | <font color="#397300">function</font> | &check; | - | <font color="grey">*callback function to get submitted data*</font> |
+| <font color='#4646c6'>googleClientId</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*google oauth2 client ID*</font> |
+| <font color='#4646c6'>facebookClientId</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*facebook oauth2 client ID*</font> |
+| <font color='#4646c6'>oAuthRedirectUri</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*oauth2 redirect URI*</font> |
+| <font color='#4646c6'>logoUrl</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*URL of the logo displayed on top of the form. If undefined, no logo is shown*</font> |
+| <font color='#4646c6'>providerName</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*provider name that is shown in the consent label*</font> |
+| <font color='#4646c6'>termsUrl</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*URL to the terms page*</font> |
+| <font color='#4646c6'>privacyUrl</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*URL to the privacy policy page*</font> |
+| <font color='#4646c6'>forgotPasswordUrl</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*forgot password URL*</font> |
+| <font color='#4646c6'>error</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*if true, will show error message*</font> |
+| <font color='#4646c6'>lastStep</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*can be "LOGIN", "SIGNUP", or "SOCIAL". Will show the corresponding view on mount.*</font> |

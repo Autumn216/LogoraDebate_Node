@@ -1,0 +1,43 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .debateContainer {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+    }
+
+    .debate {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        color: $text-primary;
+        min-height: calc(100vh - 135px);
+        flex: 1;
+        max-width: 100%;
+    }
+
+    .debateSpacer {
+        margin-top: 2%;
+    }
+
+    .backLink {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+    .debateImageBox {
+        width: 100%;
+        border-top-left-radius: $box-border-radius;
+        border-top-right-radius: $box-border-radius;
+    }
+
+    .debateImage {
+        width: 100%;
+        border-top-left-radius: $box-border-radius;
+        border-top-right-radius: $box-border-radius;
+        object-fit: cover;
+        height: 210px;
+    }
+}

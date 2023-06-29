@@ -1,0 +1,22 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.debateRelatedBox {
+  @include mb(4, xs);
+  @include mt(4, xs);
+  @include mb(5, sm);
+  a {
+    text-decoration: none !important;
+  }
+}
+
+.debateRelatedBoxHeader {
+  font-weight: $font-weight-bold;
+  @include mb(2, xs);
+}
+
+.seeMoreLink   {
+  text-align: center;
+  @include mt(5, sm);
+  @include mt(4, xs);
+}

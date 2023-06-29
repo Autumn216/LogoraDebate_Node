@@ -1,0 +1,74 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .voteButtonsContainer{
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include mr(2, xs);
+    }
+
+    .voteButton {
+        @include px(2, xs);
+        @include py(1, xs);
+        cursor: pointer;
+        border-radius: $box-border-radius;
+        font-size: $font-size-small;
+        svg {
+            @include mr(1, xs);
+            margin-bottom: 2px;
+        }
+        &.upvotes {
+            @include mr(2, xs);
+            color: $info-primary;
+            border: 1px solid $info-primary;
+            svg {
+                fill: $info-primary;
+            }
+            &.active {
+                background-color: $info-primary;
+                color: white;
+                svg {
+                    fill: white;
+                }
+            }
+        }
+        &.downvotes {
+            color: $cancel-primary;
+            border: 1px solid $cancel-primary;
+            svg {
+                fill: transparent;
+                path {
+                    fill: $cancel-primary;
+                }
+                circle {
+                    stroke: $cancel-primary;
+                    stroke-width: 1.5px;
+                }
+            }
+            &.active {
+                background-color: $cancel-primary;
+                color: white;
+                svg {
+                    fill: $cancel-primary;
+                    path {
+                        fill: white;
+                    }
+                    circle {
+                        stroke: white;
+                    }
+                }
+            }
+        }
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+
+    .numberVotes {
+        @include mx(2, xs);
+    }
+
+}

@@ -1,0 +1,81 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.container {
+    display: flex !important;
+    flex-direction: column !important;
+    @include p(3, xs);
+    @include my(2, xs);
+    height: 100%;
+    row-gap: 0.5em;
+    border-radius: $box-border-radius;
+    box-shadow: $box-shadow;
+    border: $box-border;
+}
+
+.title {
+    display: flex !important;
+    align-items: center !important;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    color: #4DC29F;
+    svg {
+        display: inline-block;
+        @include mr(1, xs);
+        width: 30px;
+        height: 30px;
+        fill: #4DC29F;
+    }
+}
+
+.point {
+    font-weight: $font-weight-bold;
+    svg {
+        display: inline-block;
+        vertical-align: middle;
+        @include mr(1, xs);
+    }
+    .pointNumber {
+        @include mx(1, xs);
+    }
+}
+
+.text {
+    height: 100%;
+    color: $text-secondary;
+}
+
+.textSpacing {
+    @include mr(1, xs);
+}
+
+.link {
+    display: flex !important;
+    align-items: center !important;
+    @include px(3, xs);
+    @include py(2, xs);
+    width: fit-content;
+    background-color: #4DC29F;
+    border-radius: $box-border-radius;
+    cursor: pointer;
+    svg {
+        display: inline-block;
+        vertical-align: middle;
+        @include ml(1, xs);
+        transform: rotate(180deg);
+        fill: white;
+    }
+    a {
+        color: white !important;
+        text-decoration: none;
+    }
+    &:hover {
+        filter: brightness(110%);
+    }
+}
+
+.moduleNotActive {
+    font-size: $font-size-extra-small;
+    color: $text-secondary;
+    font-style: italic;
+}

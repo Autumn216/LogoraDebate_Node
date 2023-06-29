@@ -1,0 +1,27 @@
+---
+description: A hook to help make the display responsive.
+labels: ['responsive']
+---
+
+This hook is returning three boolean variables to enable responsive design :
+- _isMobile_ : screen width under 576 pixels
+- _isTablet_ : screen width betwwen 577 and 768 pixels
+- _isDesktop_ : screen width above 769 pixels
+
+It is using [react-responsive](https://www.npmjs.com/package/react-responsive) under the hood.
+
+### Component usage
+```js
+import { useResponsive } from '@logora/debate.hooks.use_responsive';
+```
+```js
+const ResponsiveComponent = () => {
+	const [isMobile, isTablet, isDesktop] = useResponsive();
+
+	return (
+        <>
+            { isMobile && <div>Displayed on mobile screens only</div> }
+        </>
+    )
+}
+```

@@ -1,0 +1,92 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+@import '~@logora/debate.styles.tabs/_tabs.scss';
+
+.consultationContainer {
+    @include pt(3, xs);
+}
+
+.consultationTagList {
+    display: flex !important;
+    @include mt(4, xs);
+    @include mb(1, xs);
+    @include justify-content(flex-start, sm);
+    overflow-x: auto;
+    overflow-y: hidden;
+    @include media-breakpoint-down(xs) {
+        width: 90vw;
+    }
+}
+
+.tagItem {
+    display: flex !important;
+    @include mb(2, xs);
+    color: $text-secondary;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.consultationExpertImageList {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    @include media-breakpoint-down(xs) {
+        width: 90vw;
+    }
+}
+
+.expertItem {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    @include m(3, xs);
+    @include ml(0, xs);
+    @include mb(1.5, xs);
+    transition: opacity 0.2s linear;
+    &:hover {
+        opacity: 0.8;
+    }
+
+    img {
+        border-radius: 50%;
+        @include mb(2, xs);
+        cursor: pointer;
+        width: 60px;
+        &.activeUser {
+            border: 3px solid;
+            border-color: $call-primary !important;
+        }
+
+    }
+    span {
+        font-size: $font-size-small;
+        &.activeUser {
+            color: $call-primary !important;
+            font-weight: $font-weight-bold;
+        }
+    }
+}
+
+.allExpert {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 60px;
+    height: 60px;
+    background-color: $call-primary !important;
+    border-radius: 50%;
+    cursor: pointer;
+    @include mb(2, xs);
+    svg {
+        fill: white;
+    }
+    &.activeUser {
+        border: 2px solid;
+        border-color: $call-primary !important;
+        box-shadow: inset 0px 0px 0px 2px white;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,52 @@
+---
+description: A box to embed comments that contains top comments and stats about the comment thread.
+labels: ['comment', 'embed']
+---
+
+import { CommentsEmbed } from './CommentsEmbed';
+import { IntlProvider } from 'react-intl';
+import { BrowserRouter } from 'react-router-dom';
+
+A box to show comments of an article and links to the comments section.
+It must be wrapped with IntlProvider, ConfigProvider, and be inside a Router from react-router.
+
+### Component usage
+```js
+    import { CommentsEmbed } from '@logora/debate.comment.comments_embed';
+```
+```js
+    const source = {
+        uid: "article-uid",
+        comments_count: 12,
+        online_users_count: 130,
+        top_comments: [
+            {
+                id: 1,
+                content: "Comment content 1",
+                author: {
+                    image_url: "https://example.com/image1",
+                    full_name: "John Doe",
+                    slug: "john-doe",
+                    points: 52
+                }
+            },
+            {
+                id: 2,
+                content: "Comment content 2",
+                author: {
+                    image_url: "https://example.com/image2",
+                    full_name: "John Doe 2"
+                    slug: "john-doe-2,
+                    points: 132
+                }
+            }
+        ]
+    };
+    <BrowserRouter>
+        <IntlProvider locale="en">
+            <ConfigProvider routes={{...routes}}>
+                <CommentsEmbed source={source} />
+            </ConfigProvider>
+        </IntlProvider>
+    </BrowserRouter>
+```

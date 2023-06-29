@@ -1,0 +1,108 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+.index {
+    @include p(0, xs);
+}
+
+.indexHeader {
+    display: flex !important;
+    flex-direction: row !important;
+    @include p(0, xs);
+    @include my(2, xs);
+    @include my(4, sm);
+}
+
+.indexHeaderBody {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    @include make-col-ready();
+    @include make-col(12);
+    @include p(0, xs);
+    &.indexHeaderBodyisTablet {
+        @include media-breakpoint-up(sm) {
+            @include make-col(7);
+        };
+    }
+}
+
+.indexHelpText {
+    font-size: $font-size-small;
+    color: $text-secondary;
+    text-align: center;
+    @include p(0, xs);
+    @include mt(3, xs);
+    @include py(2, xs);
+}
+
+.indexDebateBox {
+    @include p(0, xs);
+    @include my(4, xs);
+}
+
+.indexBoxHeader {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-large;
+    font-family: $title-font-family;
+    width: 100%;
+    margin-top: 1em !important;
+    @include mb(1, xs);
+}
+
+.indexBestUsers {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include align-items(flex-end, xs);
+    @include make-col-ready();
+    @include make-col(12);
+    @include p(0, xs);
+}
+
+.indexBestUsersDesktop {
+    @extend .indexBestUsers;
+    @include justify-content(space-around, xs);
+    @include pl(2, xs);
+    @include ml-auto(xs);
+    @include media-breakpoint-up(sm) {
+        @include make-col(5);
+    };
+}
+
+.indexBestUsersMobile {
+    @extend .indexBestUsers;
+    @include justify-content(start, xs);
+    @include mt(4, xs);
+    @include mb(5, xs);
+    &.indexBestUsersisTablet {
+        @include media-breakpoint-up(sm) {
+            @include make-col(4);
+        };
+    }
+}
+
+.indexBestUsersBox {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    height: 100%;
+    width: 100%;
+    padding: 0 !important;
+}
+
+.noDebatesError {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    @include my(4, xs);
+    text-align: center;
+    font-size: $font-size-small;
+    color: $text-secondary;
+}
+
+.indexAdminButton {
+    @include mt(4, xs);
+}

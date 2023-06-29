@@ -1,0 +1,27 @@
+---
+description: A box component to show a single argument of a debate.
+labels: ['argument']
+---
+
+import { ArgumentBox } from './ArgumentBox';
+
+A box component to show a single argument from a debate.
+It must be wrapped by react-intl's IntlProvider, by ConfigProvider and by a router from react-router.
+
+### Component usage
+```js
+    import { ArgumentBox } from '@logora/debate.argument.argument_box';
+```
+```js
+<ArgumentBox
+    author={author}
+    tag={"Politics"}
+    date={new Date()}
+    content={"Argument content}
+    link={"https://example.com"}
+    argumentCount={12}
+    tagClassName="argument-position"
+    headerOneLine
+    showFooter
+/>
+```

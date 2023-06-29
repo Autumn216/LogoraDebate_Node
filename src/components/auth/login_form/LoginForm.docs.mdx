@@ -1,0 +1,33 @@
+---
+description: A simple login form.
+labels: ['auth', 'login', 'form']
+---
+
+import { LoginForm } from './LoginForm';
+import { MemoryRouter } from "react-router";
+import { IntlProvider } from "react-intl";
+
+A login form with email and password inputs.
+
+### Component usage
+```js
+import LoginForm from '@logora/debate.auth.login_form';
+```
+```js
+    <MemoryRouter>
+        <IntlProvider locale="en">
+            <LoginForm 
+                onSubmit={(email, password) => console.log(email) }
+                error={false}
+                forgotPasswordUrl={"http://example.com/forgot_password"}
+            />
+        </IntlProvider>
+    </MemoryRouter>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>onSubmit</font> | <font color="#397300">function</font> | &check; | - | <font color="grey">*callback function to get submitted email and password*</font> |
+| <font color='#4646c6'>error</font> | <font color="#397300">boolean</font> | &cross; | - | <font color="grey">*if true, will show error message*</font> |
+| <font color='#4646c6'>forgotPasswordUrl</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*URL to the forgot password page. A _redirect_url_ query parameter is passed with the link.*</font> |

@@ -1,0 +1,126 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .messageListContainer, .info {
+        @include mb(2, xs);
+    }
+
+    .userImage {
+        height: 25px !important;
+        width: 25px !important;
+        object-fit: cover;
+        max-width: none;
+        border-radius: 50%;
+    }
+
+    .emptyUserImage {
+        @include mr(2, xs);
+        height: 25px !important;
+        width: 25px !important;
+        max-width: none;
+        border-radius: 50%;
+        background: $darken-text-tertiary;
+    }
+
+    .headerContainer {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include justify-content(space-between, xs);
+        @include align-items(center, xs);
+        @include p(2, xs);
+        @include mt(2, xs);
+        @include mb(1, xs);
+        background-color: $call-primary !important;
+        color: white;
+        border-radius: $box-border-radius;
+        font-size: $font-size-normal;
+        @include media-breakpoint-down(md) {
+			@include my(2, xs);
+		}
+        .itemLeft {
+            @include mr(2, xs);
+        }
+    }
+
+    .nextRoundHeader {
+        opacity: 0.7;
+    }
+
+    .unstartedDuelHeader {
+        opacity: 1;
+    }
+
+    .nextUserContainer {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+    }
+
+    .messagesContainer {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include align-items(flex-start, xs);
+        @include media-breakpoint-down(md) {
+			@include flex-direction(column, xs);
+		}
+    }
+
+    .messageBox {
+        @include mt(1, xs);
+        @include mb(2, xs);
+        @include mr(1.5, xs);
+        width: 50%;
+        @include media-breakpoint-down(md) {
+			@include mr(0, xs);
+			@include mt(0, xs);
+			@include mb(2, xs);
+            width: 100%;
+		}
+        &.closedArgumentBlankContainer {
+            @include mt(2.5, xs);
+        }
+        &.inputContainer {
+            @include mt(2.5, xs);
+        }
+        &.textInformation {
+            text-align: center;
+            align-self: center;
+            font-style: italic;
+            @include mt(2, xs);
+            @include p(3, xs);
+            border-radius: $box-border-radius;
+            box-shadow: $box-shadow;
+            border: $box-border;
+        }
+    }
+
+    .footerContainer {
+        @include p(2, xs);
+        background-color: $text-secondary;
+        color: $text-primary;
+        border-radius: $box-border-radius;
+        filter: brightness(145%);
+        text-align: center;
+        .footerText {
+            opacity: .6;
+        }
+    }
+
+    .emptyRoundContainer {
+        @include p(2, xs);
+        @include mb(2, xs);
+        width: 100%;
+        color: $text-secondary;
+        box-shadow: $box-shadow;
+        border: $box-border;
+        text-align: center;
+        font-size: $font-size-small;
+        font-style: italic;
+    }
+
+    .timeRemaining {
+        @include ml(1.5, xs);
+    }
+}

@@ -1,0 +1,22 @@
+---
+description: A box component to show a placeholder for a new argument in a debate.
+labels: ['argument', 'debate', 'placeholder']
+---
+
+import { ArgumentBlankBox } from './ArgumentBlankBox';
+
+A box component to show a placeholder for a new argument in a debate.
+It must be wrapped by react-intl's IntlProvider, and by a router from react-router if `debateUrl` is passed.
+
+### Component usage
+```js
+    import { ArgumentBlankBox } from '@logora/debate.argument.argument_blank_box';
+```
+```js
+<ArgumentBlankBox
+    debateUrl={debateUrl}
+    position={position}
+    positionClassName="argument-position"
+    handleClick={handleClick}
+/>
+```

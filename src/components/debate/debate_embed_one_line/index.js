@@ -1,0 +1,1 @@
+export { DebateEmbedOneLine } from './DebateEmbedOneLine';

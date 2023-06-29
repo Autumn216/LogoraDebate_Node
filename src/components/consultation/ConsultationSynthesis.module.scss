@@ -1,0 +1,80 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+
+:global(.logoraContainer) {
+    .synthesisHeaderContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include mt(4, xs);
+        @include p(3, xs);
+        height: max-content;
+        box-shadow: $box-shadow;
+        border: $box-border;
+        color: $text-primary;
+        border-radius: $box-border-radius;
+        p {
+            @include mt(3, xs);
+        }
+    }
+    
+    .synthesisContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        p {
+            @include mt(3, xs);
+        }
+    }
+
+    .synthesisDescription {
+        @include px(1, xs);
+        @include mb(2.5, xs);
+    }
+
+    .consultationTagList {
+        @include display(flex, xs);
+        @include mb(1, xs); // Il y a déjà un espacement sur tagItem dans le cas où la liste fait plusieurs lignes
+        @include justify-content(flex-start, sm);
+        
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .tagItem {
+        @include display(flex, xs);
+        @include mb(2, xs);
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .synthesisPieChartsContainer {
+      @include display(flex, xs);
+      @include flex-direction(column, xs);
+      @include flex-direction(row, sm);
+      @include justify-content(center, xs);
+      @include justify-content(flex-start, sm);
+      @include mt(4, xs);
+      box-shadow: $box-shadow;
+      border: $box-border;
+      color: $text-primary;
+      border-radius: $box-border-radius;
+      :first-child {
+          @include mr(4, sm);
+          @include mr(0, xs);
+        }
+    }
+
+    .statsContainer {
+      box-shadow: $box-shadow;
+      border: $box-border;
+      color: $text-primary;
+      border-radius: $box-border-radius;
+      @include mt(4, xs);
+    }
+
+    .synthesisLineChart {
+        @include p(3, xs);
+    }
+}

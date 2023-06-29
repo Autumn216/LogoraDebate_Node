@@ -1,0 +1,63 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+  .challengeCreateBox {
+    font-size: $font-size-normal;
+    border: $box-border;
+    box-shadow: $box-shadow;
+    border-radius: $box-border-radius;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include mr(0, xs);
+    @include mr(2, sm);
+    @include mb(0, xs);
+    @include mt(3, xs);
+    @include p(0, xs);
+
+    .title {
+      font-weight: $font-weight-bold;
+      display: block;
+      @include line-clamp(2);
+      @include p(3, xs);
+      @include pb(0, xs);
+      @include mb(1, xs);
+      min-height: 58px;
+    }
+
+    .choiceSection {
+      @include py(2, xs);
+      @include px(3, xs);
+      font-size: $font-size-small;
+    }
+
+    .positionsBox {
+      @include py(2, xs);
+      @include px(3, xs);
+      .positionItem {
+        cursor: pointer;
+        font-weight: $font-weight-bold;
+        @include p(2, xs);
+        color: white;
+        border-radius: $box-border-radius;
+        border: $box-border;
+        &.position-1 {
+          @include mb(2, xs);
+          border-color: $for-primary;
+          background-color: $for-primary;
+        }
+        &.position-2 {
+          border-color: $against-primary;
+          background-color: $against-primary;
+        }
+        &.positionItemDisabled {
+          cursor: not-allowed;
+      }
+      }
+    }
+
+  }
+
+}

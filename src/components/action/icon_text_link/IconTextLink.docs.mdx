@@ -1,0 +1,44 @@
+---
+description: A link component with an icon and text.
+---
+
+import { IconTextLink } from './IconTextLink';
+import { MemoryRouter } from "react-router";
+import HomeIcon from './HomeIcon.dev'
+
+A component that renders a link styled with an icon and text underneath.
+
+IconTextLink is using the Link component from react-router when _to_ is passed, and it should be inside a router in this case.
+
+_icon_ prop should be a component.
+
+_to_ prop can be a string, an object or a function, as per react-router documentation : https://v5.reactrouter.com/web/api/Link
+
+If _children_ are passed, it will replace the icon.
+
+Other props will be passed to the link or to the main container.
+
+### Component usage
+```js
+<MemoryRouter>
+    <IconTextLink 
+        to={link}
+        icon={HomeIcon}
+        text="My link!"
+        className={classNameToPass}
+        custom-attribute={"my-value"}
+    />
+</MemoryRouter>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>to</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*href or object passed to react-router*</font> |
+| <font color='#4646c6'>className</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*link class name*</font> |
+| <font color='#4646c6'>icon</font> | <font color="#397300">Component</font> | &cross; | - | <font color="grey">*icon component displayed if no children are passed*</font> |
+| <font color='#4646c6'>text</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*text displayed under icon*</font> |
+| <font color='#4646c6'>active</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*if _true_, will highlight the component*</font> |
+| <font color='#4646c6'>children</font> | <font color="#397300">Component</font> | &cross; | - | <font color="grey">*if passed, will not show icon*</font> |
+| <font color='#4646c6'>pin</font> | <font color="#397300">boolean</font> | &cross; | - | <font color="grey">*if passed, will show a red pin on top of icon*</font> |
+| <font color='#4646c6'>pinText</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*if passed, will show text inside red pin on top of icon*</font> |

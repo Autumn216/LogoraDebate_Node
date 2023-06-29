@@ -1,0 +1,72 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.toolbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    background: #fff;
+    @include pt(2.5, xs);
+    vertical-align: middle;
+    &.toolbarIsActive {
+        border-top: 1px solid lightgray;
+    }
+}
+
+.iconToolbar {
+    display: flex !important;
+}
+
+.toolbarItem {
+    border: 0;
+    display: flex !important;
+    background: none;
+    border-radius: 10px;
+    @include p(2, xs);
+    cursor: pointer;
+    vertical-align: middle;
+    &.spaced {
+        @include mr(2, xs);
+        &.shortBar {
+            @include mr(1, xs);
+        }
+    }
+    &.disabled {
+        cursor: not-allowed;
+    }
+    &.active {
+        background-color: rgba(223, 232, 250, 0.3);
+    }
+    .format {
+        background-size: contain;
+        display: inline-block;
+        vertical-align: -0.25em;
+        display: flex !important;
+    }
+}
+
+.actionButton {
+    display: flex !important;
+}
+
+.inputSubmitActionButton {
+    width: 100%;
+    height: 35px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: $call-primary;
+    &.submitAction {
+        @include ml(2, xs);
+        svg {
+            fill: white !important;
+        }
+    }
+    .inputSourceText {
+        display: none !important;
+        @include ml(2, xs);
+        font-size: $font-size-small;
+        @include media-breakpoint-up(sm) {
+            display: block !important;
+        }
+    }
+}

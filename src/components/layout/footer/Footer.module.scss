@@ -1,0 +1,96 @@
+@use '@logora/debate.styles.theme/_theme.scss' as *;
+@use '@logora/debate.styles.spacing/_spacing.scss' as *;
+
+.footer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    border: $box-border;
+    box-shadow: $box-shadow;
+    border-radius: $box-border-radius;
+    color: $text-secondary;
+    clear: both;
+    height: 60px;
+    margin-top: -60px;
+    font-size: $font-size-small;
+    @include m(0, xs);
+}
+
+@media(max-width: 768px) {
+    .footer {
+        height: max-content;
+    }
+}
+
+.footer a {
+    color: $text-secondary;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: $text-secondary;
+}
+
+.footerContainer {
+    margin: 0;
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    @include p(0, xs);
+    @include px(3, xs);
+}
+
+.footerContainerFullWidth {
+    @extend .footerContainer;
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.footerCreditBox {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    @include media-breakpoint-up(sm) {
+        flex-direction: row !important;
+    }
+    @include p(0, sm);
+    @include p(3, xs);
+    width: 100%;
+    a {
+        @include mb(2, xs);
+        @include mb(0, sm);
+        @include mt(2, xs);
+        @include mt(0, sm);
+        @include mr(4, sm);
+        @include mr(0, xs);
+    }
+}
+
+.linkViewLogora {
+    margin-left: auto;
+    display: flex !important;
+    align-items: center !important;
+    @include mb(2, xs);
+    @include mb(0, sm);
+    @include mt(2, xs);
+    @include mt(0, sm);
+}
+
+@media(max-width: 768px) {
+    .linkViewLogora {
+        margin-left: 0;
+    }
+}
+
+.logo {
+    height: 20px;
+    width: 20px;
+    @include mr(2, xs);
+}
+
+@media(min-width: 769px) {
+    .footerContainer {
+        margin: auto;
+    }
+}

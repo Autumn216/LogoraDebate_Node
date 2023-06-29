@@ -1,0 +1,31 @@
+---
+description: A small author box component with a user avatar image and name link.
+tags: ['author', 'avatar', 'user', 'image']
+---
+
+import { AuthorBoxSmall } from './AuthorBoxSmall';
+
+The AuthorBoxSmall component is used to display a user's avatar image and name link in a small box.
+It uses [ConfigProvider](https://bit.cloud/logora/debate/context/config_provider) for routing.
+The avatar image is rendered using the [Avatar](https://bit.cloud/logora/debate/user/avatar) component with size "small".
+
+### Component usage
+```js
+import { AuthorBoxSmall } from '@logora/debate.user.author_box_small';
+```
+```js
+import { AuthorBoxSmall } from './AuthorBoxSmall';
+
+const author = {
+  slug: 'john-doe',
+  full_name: 'John Doe',
+  image_url: 'https://example.com/avatar.jpg'
+};
+
+<AuthorBoxSmall author={author} />
+```
+
+### Properties
+| Prop name | Type   | Required | Default | Description                                                       |
+| --------- | ------ | -------- | ------- | ----------------------------------------------------------------- |
+| author    | object | Yes      | -       | An object containing the `full_name`, `image_url` and `slug` of the author.   |

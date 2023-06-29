@@ -1,0 +1,94 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .challengeBannerContainer {
+        border-color: $call-primary !important;
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include my(3, xs);
+        @include p(3, xs);
+        border-top: 3px solid;
+        border-radius: 0 0 6px 6px;
+        background-color: $text-tertiary
+    }
+
+    .challengeBannerTitle {
+        color: $call-primary !important;
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+    }
+
+    .challengeBannerButtonContainer {
+        @include mt(3, xs);
+        @include py(2, xs);
+        @include px(3, xs);
+        width: fit-content;
+        cursor: pointer;
+        border-radius: $box-border-radius;
+        background-color: $call-primary !important;
+        &.isButtonMobile {
+            width: 100%;
+            text-align: center;
+        }
+        &:hover {
+            color: white !important;
+            filter: brightness(110%);
+        }
+    }
+
+    .challengeBannerButton {
+        color: white;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold !important;
+        max-width: max-content;
+        text-transform: uppercase;
+        margin-right: auto;
+        span > svg {
+            transform: rotate(180deg);
+            fill: #FFF !important;
+        }
+
+    }
+
+    .challengeTextButton {
+        @include mr(2, xs);
+    }
+
+    .challengeInfoContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include mt(3, xs);
+        @include p(3, xs);
+        border-radius: $box-border-radius;
+		box-shadow: $box-shadow;
+		border: $box-border;
+        background-color: white;
+    }
+
+    .challengeTitle {
+        @include mb(1, xs);
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+    }
+
+    .challengeArgumentsContainer {
+        @include display(flex, xs);
+        @include mb(3, xs);
+        gap: 1em;
+        &.isArgumentsContainerMobile {
+            @include flex-direction(column, xs);
+            gap: 4px;
+        }
+    }
+
+    .challengeArgument {
+        width: 50%;
+        height: 100%;
+        &.isArgumentMobile {
+            width: 100%;
+        }
+    }
+}

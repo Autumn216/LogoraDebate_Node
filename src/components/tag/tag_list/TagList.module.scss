@@ -1,0 +1,32 @@
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.indexTagList {
+	display: flex !important;
+	flex-direction: row !important;
+	justify-content: flex-start !important;
+	@include mt(3, xs);
+	@include mt(4, sm);
+	overflow-x: scroll;
+	overflow-y: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+button.tagContainer {
+	display: flex !important;
+	@include mt(1, xs);
+	@include m(0, sm);
+	cursor: pointer;
+	background-color: white;
+	border: none;
+	outline: none !important;
+	padding: 0 !important;
+
+	&::-moz-focus-inner {
+		border: 0;
+	}
+}

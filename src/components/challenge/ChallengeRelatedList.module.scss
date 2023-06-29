@@ -1,0 +1,21 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+  .challengeRelatedBox {
+    @include mb(4, xs);
+    @include mt(4, xs);
+    @include mb(5, sm);
+  }
+
+  .challengeRelatedBoxHeader {
+    font-weight: $font-weight-bold;
+  }
+
+  .seeMoreLink   {
+    text-align: center;
+    @include mt(5, sm);
+    @include mt(4, xs);
+  }
+}

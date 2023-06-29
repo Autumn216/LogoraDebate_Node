@@ -1,0 +1,1 @@
+export { ConsultationEmbed } from './ConsultationEmbed';

@@ -1,0 +1,31 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+  .mobileIcon {
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+    z-index: 500;
+    svg {
+      path, circle {
+        fill: white;
+        &:first-child {
+          fill: $call-primary;
+        }
+      }
+    }
+  }
+  .mobileIconDrawer {
+    position: sticky;
+    top: 70%;
+    right: 0;
+    bottom: 0;
+    svg {
+      position: absolute;
+      right: 0px;
+    }
+  }
+}

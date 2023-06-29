@@ -1,0 +1,1 @@
+export { FacebookLoginButton as default } from './FacebookLoginButton';

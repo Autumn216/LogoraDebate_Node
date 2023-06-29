@@ -1,0 +1,24 @@
+---
+description: A back link component.
+---
+
+import { BackLink } from './BackLink';
+
+A button that opens a link with back arrow and text. Text is uppercased by default.
+
+### Component usage
+```js
+import BackLink from '@logora/debate.action.back_link';
+```
+```js
+<BackLink
+    link="https://example.com/source-link"
+    text="Back to article"
+/>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>link</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*link URL*</font> |
+| <font color='#4646c6'>text</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*link text *</font> |

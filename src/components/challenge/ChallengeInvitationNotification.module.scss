@@ -1,0 +1,78 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+  .notificationItemDate {
+    font-weight: $font-weight-normal;
+    color: $text-secondary;
+    font-size: $font-size-extra-small;
+  }
+
+  .notificationItemContent {
+    @include ml(3, xs);
+    font-size: $font-size-small;
+  }
+
+  .notificationBorder {
+    @include pt(1.5, xs);
+    @include pb(1, xs);
+    @include my(1, xs);
+    border-top: 1px $text-secondary solid;
+    border-bottom: 1px $text-secondary solid;
+    svg {
+      @include mr(1, xs);
+      @include mb(1, xs);
+      display: inline-block;
+    }
+  }
+
+  .notificationButtonBox {
+    @include mt(3, xs);
+  }
+
+  .notificationButton {
+    @include px(2, xs);
+    @include py(1.5, xs);
+    @include mr(2, xs);
+    border-radius: $box-border-radius;
+    border: 1px solid;
+    &.accept {
+      background-color: $success-primary;
+      border-color: $success-primary;
+      color: white;
+    }
+    &.reject {
+      background-color: $cancel-primary;
+      border-color: $cancel-primary;
+      color: white;
+    }
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  .challengeIcon {
+    position: absolute;
+    top: 25%;
+    right: -5px;
+  }
+
+  .challengeIsAnswered {
+    @include mt(1, xs);
+    @include px(2, xs);
+    @include py(1.5, xs);
+    color: white;
+    font-style: italic;
+    font-size: $font-size-extra-small;
+    width: fit-content;
+    border-radius: $box-border-radius;
+    &.challengeIsAccepted {
+      background-color: $success-primary;
+    }
+    &.challengeIsRejected {
+      background-color: $cancel-primary;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+:global(.logoraContainer) {
+  .debateNavbar {
+		@include display(flex, xs);
+		@include flex-direction(row, xs);
+		@include align-items(center, xs);
+		@include px(0, xs);
+		@include mx(0, xs);
+		@include mb(2, xs);
+		@include mt(2, xs);
+		@include flex-wrap-reverse(xs);
+	}
+
+  .emptyArgumentList {
+    color: $text-secondary;
+    text-align: center;
+    @include make-col-ready();
+    @include make-col(12);
+    min-height: 5em;
+  }
+
+  .argumentListContainer {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+  }
+
+  .argumentList {
+    @include p(0, xs);
+    @include m(0, xs);
+    @include make-col-ready();
+    @include make-col(6);
+    @include pr(2, xs);
+    list-style-type: none;
+  }
+
+  .argumentListMobile {
+    @include p(0, xs);
+    @include m(0, xs);
+    @include make-col-ready();
+    @include make-col(12);
+    list-style-type: none;
+  }
+
+  .conversationListContainer {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+  }
+
+  .conversationList {
+    @include p(0, xs);
+    @include m(0, xs);
+    @include make-col-ready();
+    @include make-col(12);
+    list-style-type: none;
+  }
+
+  .conversationList .argumentListItem {
+    display: flex;
+    width: 100%;
+    & > div:first-of-type {
+      width: 50%;
+    }
+  }
+  .conversationList .argumentListItem.position-1 {
+    & > div:first-of-type {
+      padding-right: 1%;
+    }
+  }
+  .conversationList .argumentListItem.position-2 {
+    & > div:first-of-type {
+      padding-left: 1%;
+      margin-left: auto;
+    }
+  }
+
+  .positionBackground-0 {
+    color: white !important;
+    background-color: $for-primary !important;
+  }
+
+  .positionBackground-1 {
+    color: white !important;
+    background-color: $against-primary !important;
+  }
+}

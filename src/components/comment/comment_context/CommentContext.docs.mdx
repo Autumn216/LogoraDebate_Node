@@ -1,0 +1,42 @@
+---
+description: A component that renders a context header for the comments section.
+---
+
+import { CommentContext } from './CommentContext';
+
+A component that renders a context header for the comments section with an image a title and a redirect link back to the article.
+
+it should be wrapped around [react-intl](https://formatjs.io/docs/getting-started/installation/)'s IntlProvider.
+
+### Component usage
+```js
+import { CommentContext } from '@logora/debate.comment.comment_context';
+```
+```js
+    const source = {
+        id: 102,
+        uid: "avemaria",
+        title: "Ave Maria",
+        publisher: "Logora",
+        origin_image_url: "https://i.la-croix.com/729x486/smart/2018/01/30/1200909919/Deux-generations-debat-lentreprise_0.jpg",
+        source_url: "http://logora-demo.herokuapp.com/avemaria",
+        published_date: "2023-01-21T11:00:00.000Z",
+        tags: [
+            {
+                id: 23,
+                name: "bonjour",
+                taggings_count: 0,
+                display_name: "bonjour"
+            }
+        ]
+    }
+    
+    <IntlProvider locale="en">
+        <CommentContext source={source} />
+    </IntlProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>source</font> | <font color="#397300">object</font> | &check; | - | <font color="grey">*a source object gathering all the comment context infos*</font> |

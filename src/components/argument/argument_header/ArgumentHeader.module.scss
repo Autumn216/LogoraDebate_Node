@@ -1,0 +1,56 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import "~@logora/debate.styles.display/_display.scss";
+@import "~@logora/debate.styles.spacing/_spacing.scss";
+
+.argumentHeader {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: flex-start !important;
+	padding: 1em 1em 5px;
+	font-size: $font-size-normal;
+}
+
+.argumentHeaderAuthorBox {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	padding: 0 !important;
+	overflow: hidden;
+	flex: 1;
+}
+
+.argumentHeaderDate {
+	color: $text-secondary;
+	font-size: $font-size-extra-small;
+	font-weight: $font-weight-normal;
+	text-align: right;
+	@include pt(2, xs);
+}
+
+.argumentHeaderRight {
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: flex-end !important;
+	justify-content: center !important;
+	padding: 0 !important;
+	width: max-content;
+	margin-left: auto;
+}
+
+.argumentHeaderTagBox {
+	font-weight: $font-weight-bold;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: flex-end !important;
+	border-radius: $box-border-radius;
+	background-color: $call-primary;
+}
+
+.argumentHeaderTag {
+	font-size: $font-size-extra-small;
+	color: white;
+	@include line-clamp(2);
+	max-height: 3.4em;
+	@include px(2.5, xs);
+	@include py(2, xs);
+}

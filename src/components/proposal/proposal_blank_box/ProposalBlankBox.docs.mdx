@@ -1,0 +1,25 @@
+---
+description: An empty proposal box with link.
+---
+
+import { ProposalBlankBox } from './ProposalBlankBox';
+import { IntlProvider } from 'react-intl';
+
+An empty proposal box with link.
+
+It should be wrapped around [react-intl](https://formatjs.io/docs/getting-started/installation/)'s IntlProvider.
+
+### Component usage
+```js
+import { ProposalBlankBox } from '@logora/debate.proposal.proposal_blank_box';
+```
+```js
+<IntlProvider locale="en">
+    <ProposalBlankBox redirectUrl={"https://example.com"} />
+</IntlProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>redirectUrl</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*URL to redirect to when clicking on button*</font> |

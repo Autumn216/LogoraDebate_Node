@@ -1,0 +1,38 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+
+:global(.logoraContainer) {
+    .voteButtonsContainer{
+        @include display(flex, xs);
+    }
+
+    .upvoteContainer {
+        @include mr(3, xs);
+    }
+
+    .upvoteContainer, .downvoteContainer {
+        cursor: pointer;
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        > span {
+            @include mr(2, xs);
+            font-size: $font-size-extra-small;
+        }
+    }
+
+    .voteDisabled {
+        cursor: default;
+        opacity: .6;
+    }
+
+    .active span {
+        color: $call-primary;
+    }
+
+    .active svg {
+        fill: $call-primary;
+    }
+}

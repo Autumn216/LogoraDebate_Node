@@ -1,0 +1,206 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+@import '~@logora/debate.styles.tabs/_tabs.scss';
+
+
+:global(.logoraContainer) {
+  .userEdit {
+    min-height: 84vh;
+    margin-top: 2%;
+  }
+
+  .fullWidth {
+    @include p(0, xs);
+    @include make-col-ready();
+    @include make-col(12);
+  }
+
+  .userDescriptionContainer {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include align-items(center, xs);
+    @include justify-content(center, xs);
+    @include py(5, xs);
+    @include px(0, xs);
+    @include mx(0, xs);
+    @include mt(0, sm);
+    @include make-col-ready();
+    @include make-col(12);
+    box-shadow: $box-shadow;
+    border: $box-border;
+    border-radius: $box-border-radius;
+  }
+
+  .userDescriptionBox {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include align-items(center, xs);
+    @include justify-content(center, xs);
+    @include mb(3, xs);
+    @include flex-wrap(xs);
+    @include p(0, xs);
+    @include make-col-ready();
+    @include make-col(12);
+    .userSaveBox{
+      @include mb(0, xs);
+    }
+  }
+
+  .userPictureUpload {
+    @include mb(3, xs);
+    @include mb(0, sm);
+    position: relative;
+  }
+
+  .imageEdit {
+    height: auto;
+  }
+
+  .imagePreview {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 50%;
+    width: 20vh !important;
+    height: 20vh !important;
+  }
+
+  .imageInput {
+    display: none;
+  }
+
+  .imageOverlay {
+    cursor: pointer;
+    position: absolute;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20vh !important;
+    width: 20vh !important;
+    opacity: 0.7;
+    background-color: lightgrey;
+    font-size: $font-size-large;
+    color: unset;
+    text-align: center;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .imageOverlay i {
+    font-size: 24px;
+  }
+
+  .userDescriptionContent {
+    display: flex !important;
+    flex-direction: column !important;
+    @include ml(2, xs);
+    @include p(0, xs);
+    @include pl(3, sm);
+    @include pl(0, xs);
+  }
+
+  .userNameInputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include pb(2, xs);
+
+  }
+
+  .userDescription {
+    @include mb(3, xs);
+  }
+
+  .userEditNav {
+    @include mt(5, xs);
+  }
+
+  .tabPaneTitle {
+    @include mb(4, xs);
+    text-align: center;
+    font-size: $font-size-small;
+    color: $text-secondary;
+  }
+
+  .userEditTab {
+    min-height: auto !important;
+    label {
+      font-family: $font-family !important;
+    }
+  }
+
+  .userSettingsBox {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include align-items(flex-start, xs);
+    @include justify-content(center, xs);
+    @include py(5, xs);
+    @include px(4, xs);
+    @include px(5, sm);
+    @include mt(0, sm);
+    @include make-col-ready();
+    @include make-col(12);
+    box-shadow: $box-shadow;
+    border: $box-border;
+    border-radius: $box-border-radius;
+  }
+
+  .userSettingsForm {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include align-items(flex-start, xs);
+    @include justify-content(center, xs);
+    @include p(0, xs);
+    div {
+      @include pb(2, xs);
+    }
+  }
+
+  .userSaveBox {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    @include mt(4, xs);
+    @include mb(5, xs);
+    @include make-col-ready();
+    @include make-col(12);
+  }
+
+  .userSaveButton {
+    text-transform: uppercase;
+  }
+
+  .formControl {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    padding: 0.375em 0.75em;
+    font-weight: $font-weight-normal;
+    line-height: 1.5;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #072a441a;
+    border-radius: $box-border-radius;
+    box-shadow: 0 2px 5px #072a441a;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &::placeholder {
+      color: #6c757d;
+      opacity: 1;
+    }
+    &:focus {
+      background-color: #fff;
+      border-color: #80bdff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+}

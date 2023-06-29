@@ -1,0 +1,27 @@
+---
+description: A Tooltip component.
+labels: ['tooltip']
+---
+
+import { Tooltip } from './Tooltip';
+
+A component that renders a tooltip.
+The text can be change if clicked.
+
+### Component usage
+```js
+<Tooltip 
+    text={"Information text"}
+    onClickText={"Other information"}
+    position={"top"}
+>
+    Hover and Click !
+</Tooltip>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>text</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*hover text*</font> |
+| <font color='#4646c6'>onClickText</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*text if tooltip is clicked*</font> |
+| <font color='#4646c6'>position</font> | <font color="#397300">enum position</font> | &cross; | bottom | <font color="grey">*tooltip position*</font> |

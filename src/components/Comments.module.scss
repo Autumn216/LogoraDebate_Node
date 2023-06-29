@@ -1,0 +1,43 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+
+:global(.logoraContainer) {
+    .commentContainer {
+        @include mt(3, xs);
+    }
+
+    .commentHeader {
+        @include display(flex, xs);
+        @include py(2, xs);
+        @include mt(4, xs);
+        @include mb(3, xs);
+        color: $call-primary;
+        border-bottom: 2px solid;
+        border-bottom-color: $call-primary;
+
+        .titleHeader {
+            font-size: $font-size-large;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+        }
+
+        .informationsHeader {
+            @include display(flex, xs);
+        }
+
+        svg {
+            @include ml(1, xs);
+            fill: $call-primary;
+        }
+
+        .users, .messages {
+            @include ml(3, xs);
+            @include display(flex, xs);
+            @include align-items(center, xs);
+            font-weight: $font-weight-bold;
+        }
+    }
+}

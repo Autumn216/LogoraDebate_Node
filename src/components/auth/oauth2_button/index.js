@@ -1,0 +1,1 @@
+export { OAuth2Button as default } from './OAuth2Button';

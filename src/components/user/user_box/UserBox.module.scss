@@ -1,0 +1,97 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.userBox {
+	border: $box-border;
+	box-shadow: $box-shadow;
+	border-radius: $box-border-radius;
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
+	@include p(3, xs);
+	a {
+		text-decoration: none;
+		color: $text-primary;
+	}
+}
+
+.userBoxHeader {
+	display: flex !important;
+	position: relative;
+	.userBoxConnectedPin{
+		position: absolute;
+		content: "";
+		width: 14px;
+		height: 14px;
+		background: $connected-green;
+		border-radius: 50%;
+		right: 3px;
+		bottom: 0;
+		border: 2px solid white;
+	}
+}
+
+.userBoxImage {
+	cursor: pointer;
+	object-fit: cover;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+}
+
+.userBoxDescription {
+	@include text-truncate();
+	@include ml(3, xs);
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+.userBoxName {
+	text-align: left;
+	font-weight: $font-weight-bold;
+	@include text-truncate();
+	color: $text-primary !important;
+	cursor: pointer;
+	font-size: $font-size-normal;
+	border: 0;
+}
+
+.userBoxName:hover {
+	color: $text-primary;
+	text-decoration: underline;
+}
+
+.userBoxPoints {
+	@include text-truncate();
+	display: flex !important;
+	align-items: center !important;
+	@include px(2, xs);
+	@include py(1, xs);
+	@include mr(1.5, xs);
+	@include mt(1, xs);
+	background-color: $background-color-secondary;
+	border-radius: 15px;
+	font-size: $font-size-extra-small;
+	width: fit-content;
+	svg {
+		@include mx(1, xs);
+	}
+	.pointsCount {
+		@include mr(1, xs);
+	}
+}
+
+.userBoxStats {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	@include mt(1.5, xs);
+	font-weight: $font-weight-normal;
+	font-size: $font-size-small;
+	.userDebates {
+		@include mr(2.5, xs);
+	}
+	.userCount {
+		@include mr(1, xs);
+	}
+}

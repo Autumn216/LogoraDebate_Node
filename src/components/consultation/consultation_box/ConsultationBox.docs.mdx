@@ -1,0 +1,26 @@
+---
+description: A component that renders a consultation box.
+---
+
+import { ConsultationBox } from './ConsultationBox';
+
+A component that renders a consultation box. It renders an image, a full title and some stats about the consultation.
+
+### Component usage
+```js
+import { ConsultationBox } from '@logora/debate.consultation.consultation_box';
+```
+```js
+<BrowserRouter>
+    <IntlProvider locale="en">
+        <ConfigProvider routes={{...routes}}>
+            <ConsultationBox consultation={consultation} />
+        </ConfigProvider>
+    </IntlProvider>
+</BrowserRouter>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>consultation</font> | <font color="#397300">object</font> | &check; | - | <font color="grey">*a consultation object gathering all the consultation infos*</font> |

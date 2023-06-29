@@ -1,0 +1,73 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+.container {
+    border-radius: $box-border-radius;
+    box-shadow: $box-shadow;
+    border: $box-border;
+}
+
+.header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    @include p(2, xs);
+}
+
+.authorBox {
+    display: flex !important;
+    align-items: center !important;
+}
+.authorPlaceHolder {
+    @include ml(2, xs);
+    height: 10px;
+    background: $darken-text-tertiary;
+    width: 80px;
+    border-radius: 3px;
+}
+.authorFullName {
+    @include ml(2, xs);
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+}
+.selected {
+    @include p(2, xs);
+    background-color: $success-primary;
+    color: white;
+    border-radius: $box-border-radius;
+    font-size: $font-size-extra-small;
+}
+
+.content {
+    @include px(2, xs);
+    @include py(3, xs);
+}
+
+.contentPlaceHolder {
+    height: 12px;
+    background: $darken-text-tertiary;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.contentSmallPlaceHolder {
+    @extend .contentPlaceHolder;
+    @include mt(2, xs);
+    width: 50%;
+}
+
+.footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    @include px(2, xs);
+    @include py(1.5, xs);
+}
+
+.progressBar {
+    height: 8px;
+    background-color: $call-primary;
+    width: 70%;
+    border-radius: $box-border-radius;
+}

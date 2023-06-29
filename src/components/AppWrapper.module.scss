@@ -1,0 +1,27 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '../styles/reset.module.scss';
+
+html {
+    margin-top: 0 !important;
+}
+
+:global(#logora_app) {
+    width: 100%;
+    background: white;
+    scroll-margin-top: 75px;
+}
+
+.logoraLayout {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: $layout-max-width;
+    min-height: calc(100vh - 135px);
+    width: 100% !important;
+    margin: auto;
+}
+@media(max-width:768px) {
+    .logoraLayout {
+        margin-right: $layout-mobile-margin !important;
+        margin-left: $layout-mobile-margin !important;
+    }
+}

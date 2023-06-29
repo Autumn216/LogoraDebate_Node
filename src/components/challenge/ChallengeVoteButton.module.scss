@@ -1,0 +1,46 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import "~@logora/debate.styles.spacing/_spacing.scss";
+@import "~@logora/debate.styles.flex/_flex.scss";
+@import "~@logora/debate.styles.display/_display.scss";
+
+:global(.logoraContainer) {
+    .userVote {
+		@include display(flex, xs);
+		@include justify-content(center, xs);
+		@include p(2, xs);
+		@include mt(2.5, xs);
+        cursor: pointer;
+        border-radius: $box-border-radius;
+		color: white;
+        &:hover {
+            filter: brightness(110%);
+        }
+		&.position-1 {
+            border: 1px solid $for-primary;
+			background-color: $for-primary;
+		}
+		&.position-2 {
+            border: 1px solid $against-primary;
+			background-color: $against-primary;
+		}
+        svg {
+			@include mr(1, xs);
+			fill: white;
+		}
+        &.active {
+            background-color: white !important;
+            &.position-1 {
+                color: $for-primary;
+                svg {
+                    fill: $for-primary;
+                }
+            }
+            &.position-2 {
+                color: $against-primary;
+                svg {
+                    fill: $against-primary;
+                }
+            }
+        }
+	}
+}

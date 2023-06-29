@@ -1,0 +1,196 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+
+:global(.logoraContainer) {
+    .argumentBlankBox {
+        height: 100%;
+        @include p(0, xs);
+        @include px(0, xs);
+        @include pt(0, xs);
+        @include pb(0, xs);
+        @include make-col-ready();
+        @include make-col(12);
+        transition: margin-top 2s;
+        border-radius: $box-border-radius;
+        box-shadow: $box-shadow;
+        border: $box-border;
+        position: relative;
+    }
+
+    .argumentHeader {
+        border-bottom: 1px solid $text-tertiary;
+		@include display(flex, xs);
+		@include flex-direction(row, xs);
+		@include align-items(flex-start, xs);
+        @include justify-content(space-between, xs);
+		@include p(0, xs);
+		@include pl(3, xs);
+		@include pl(3, sm);
+		@include pb(2, xs);
+		@include pt(0, xs);
+    }
+
+    .authorBox {
+        @include display(flex, xs);
+		@include flex-direction(row, xs);
+		@include align-items(center, xs);
+		@include p(0, xs);
+		@include pt(2.5, xs);
+		overflow: hidden;
+    }
+
+    .authorPosition {
+        text-transform: uppercase;
+		@include px(2.5, xs);
+		@include py(2, xs);
+		border-radius: 0 $box-border-radius 0 $box-border-radius;
+		font-size: $font-size-extra-small;
+		color: white;
+		@include line-clamp(2);
+		max-height: 3.4em;
+        background-color: $against-primary !important;
+        font-weight: $font-weight-bold;
+    }
+    
+    .privateDebateParticipantItem {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include align-items(center, xs);
+        @include mt(2.5, xs);
+    }
+
+    .imageContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+    }
+
+    .userImageEmpty {
+        background: $darken-text-tertiary;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .userImageBackground {
+        @include display(flex, xs);
+        @include justify-content(center, xs);
+    }
+
+    .userName {
+        font-weight: $font-weight-bold;
+        font-size: $font-size-small;
+        @include line-clamp(3);
+        @include ml(2, xs);
+    }
+
+    .firstUserPosition {
+        background-color: $for-primary !important;
+    }
+
+    .argumentBlankButton {
+        @include display(flex, xs);
+        @include justify-content(center, xs);
+        @include align-items(center, xs);
+        font-weight: $font-weight-bold;
+        width: 210px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -20px);
+        z-index: 3;
+        max-width: 100%;
+        white-space: break-spaces;
+        text-align: center;
+        &:hover {
+        filter: brightness(110%);
+        }
+    }
+
+    .argumentThesisHeader {
+        font-weight: $font-weight-bold;
+        @include pb(2, xs);
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include justify-content(flex-end, xs);
+    }
+
+    .argumentThesisText {
+        text-transform: uppercase;
+        @include px(3, xs);
+        @include py(2, xs);
+        border-radius: 0 $box-border-radius 0 $box-border-radius;
+        font-size: $font-size-extra-small;
+        color: white;
+    }
+
+    .argumentPlaceholder {
+        height: 20px;
+        background: $darken-text-tertiary;
+        width: 100%;
+        border-radius: 3px;
+    }
+
+    .argumentPlaceholderMargin {
+        @extend .argumentPlaceholder;
+        @include mb(2, xs);
+    }
+
+    .argumentPlaceholderRound {
+        height: 50px;
+        background: $darken-text-tertiary;
+        min-width: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+
+    .argumentPlaceholderDate {
+        @include mr(4, xs);
+        @include mb(3, xs);
+        @include pr(2, sm);
+        text-align: right;
+        color: $text-secondary;
+        font-size: $font-size-extra-small;
+        font-weight: $font-weight-normal;
+        @include pr(3, xs);
+        @include pr(2, sm);
+    }
+
+    .argumentBody {
+        @include p(0, xs);
+        @include px(3, xs);
+        @include px(2, sm);
+        @include make-col(12);
+        border-bottom: 1px solid $text-tertiary;
+        font-size: $font-size-small;
+        @include py(2, xs);
+    }
+
+    .argumentContent {
+        text-align: left;
+        @include px(2, xs);
+        white-space: pre-line;
+        line-height: 1.5em;
+        position: relative;
+    }
+
+    .argumentInfo {
+        @include p(2, xs);
+        margin-left: 20%;
+        margin-right: 20%;
+        position: absolute;
+        top: 26%;
+        width: 55%;
+        color: $text-secondary;
+        text-align: center;
+        font-style: italic;
+        @include media-breakpoint-down(sm) {
+            @include m(0, xs);
+            width: 100%;
+            left: 0%;
+		}
+    }
+}

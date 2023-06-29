@@ -1,0 +1,35 @@
+---
+description: A modal to search for a web page.
+labels: ['modal']
+---
+
+import { SourceModal } from './SourceModal';
+import { IntlProvider } from 'react-intl';
+import { ModalProvider } from '@logora/debate.dialog.modal';
+
+A modal component that fetches metadata from a web page (source) provided by user input.
+
+User inputs the URL of a web page, and when clicking on search, the modal will fetch the page metadata and display it.
+
+User can submit via a button and a callback enables to retrieve the fetched source.
+
+### Component usage
+```js
+    import SourceModal from '@logora/debate.source.source_modal';
+```
+```js
+    <IntlProvider locale="en">
+        <ModalProvider>
+            <SourceModal 
+                onAddSource={() => null}
+                onHideModal={() => null}
+            />
+        </ModalProvider>
+    </IntlProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>onAddSource</font> | <font color="#397300">function</font> | &cross; | - | <font color="grey">*callback function when a source is added*</font> |
+| <font color='#4646c6'>onHideModal</font> | <font color="#397300">function</font> | &cross; | - | <font color="grey">*callback function when modal is closed*</font> |

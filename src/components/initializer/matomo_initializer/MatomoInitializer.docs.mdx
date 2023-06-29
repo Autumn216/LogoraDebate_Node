@@ -1,0 +1,19 @@
+---
+description: A component to insert the Matomo Tag Manager script
+labels: ['matomo', 'analytics']
+---
+
+import { MatomoInitializer } from './MatomoInitializer';
+
+A component that inserts a [Matomo](https://matomo.org/) Tag Manager container script.
+
+### Component usage
+```js
+<MatomoInitializer matomoUrl={"mysite.com"} matomoContainerTag={"3R2zBYFH"} />
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>matomoUrl</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*Matomo URL, for example analytics.mysite.com*</font> |
+| <font color='#4646c6'>matomoContainerTag</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*Matomo container tag*</font> |

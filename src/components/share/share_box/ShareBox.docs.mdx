@@ -1,0 +1,31 @@
+---
+description: A component to share a link on social networks.
+---
+
+import { ShareBox } from './ShareBox';
+import { IntlProvider } from 'react-intl';
+
+A component that shows icons to share a link or to copy to clipboard.
+
+It should be wrapped around [react-intl](https://formatjs.io/docs/getting-started/installation/)'s IntlProvider.
+
+### Component usage
+```js
+<IntlProvider locale="fr">
+    <ShareBox 
+        shareUrl="https://example.com/share-link"
+        shareTitle="Here is an interesting link"
+        shareText="Hello, I stumbled upon this interesting article about asteroids. You should check it out !"
+    />
+</IntlProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>shareUrl</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*URL to share*</font> |
+| <font color='#4646c6'>shareTitle</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*title of the content that will be shared*</font> |
+| <font color='#4646c6'>shareText</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*description of the shared content*</font> |
+| <font color='#4646c6'>tooltipPosition</font> | <font color="#397300">string</font> | &cross; | "bottom" | <font color="grey">*position of the tooltips that appear on share icons*</font> |
+| <font color='#4646c6'>showShareCode</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*whether a code sharing button should be displayed*</font> |
+| <font color='#4646c6'>shareCode</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*code that will be copied to clipboard when user clicks on code share button*</font> |

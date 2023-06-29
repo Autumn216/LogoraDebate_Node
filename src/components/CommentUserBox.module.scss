@@ -1,0 +1,31 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import "~@logora/debate.styles.spacing/_spacing.scss";
+@import "~@logora/debate.styles.flex/_flex.scss";
+@import "~@logora/debate.styles.display/_display.scss";
+
+:global(.logoraContainer) {
+	.commentUserBox {
+		padding: 1.5em 0 !important;
+		border-bottom: 2px dotted $darkest-text-tertiary;
+	}
+
+	.commentUserBoxHeader {
+		@include display(flex, xs);
+		@include flex-direction(column, xs);
+		width: 100%;
+	}
+
+	.commentTitleBox {
+		@include display(flex, xs);
+		@include flex-direction(column, xs);
+		@include flex-direction(row, sm);
+		@include align-items(flex-start, xs);
+		@include justify-content(space-between, xs);
+		@include mb(2, xs);
+	}
+
+	.commentUserBoxDebateTitle {
+		font-family: inherit !important;
+		font-weight: $font-weight-bold !important;
+	}
+}

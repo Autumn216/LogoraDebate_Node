@@ -1,0 +1,1 @@
+export { FontInitializer } from './FontInitializer';

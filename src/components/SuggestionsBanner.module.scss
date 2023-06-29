@@ -1,0 +1,109 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .suggestionsBannerContainer {
+        border-color: $call-primary;
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include flex-direction(row, md);
+        @include my(3, xs);
+        border-top: 3px solid;
+        border-radius: 0 0 6px 6px;
+        background-color: $text-tertiary
+    }
+
+    .suggestionBannerContext{
+        @include display(flex, xs);
+        @include justify-content(center, xs);
+        @include justify-content(flex-start, sm);
+        @include flex-direction(column, xs);
+        @include p(3, xs);
+        max-width: 50%;
+        @include media-breakpoint-down(sm) {
+           max-width: 100%;
+        }
+        &.isMobile {
+            max-width: 100%;
+        }
+    }
+
+    .suggestionsBannerTitle {
+        @include mb(3, xs);
+        color: $call-primary;
+        width: 100%;
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+    }
+
+    .suggestionsBannerDescription {
+        margin-bottom: auto;
+        text-align: justify;
+    }
+
+    .suggestionBannerList {
+        @include px(1, xs);
+        @include py(2, xs);
+        width: 100%;
+    }
+
+    .suggestionBannerButtonContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include flex-direction(row, md);
+        @include justify-content(flex-start, xs);
+        @include align_items(center, xs);
+        @include mt(3, xs);
+    }
+
+    .suggestionBannerButton {
+        @include display(flex, xs);
+        @include justify-content(center, xs);
+        @include justify-content(flex-start, sm);
+        @include py(2, xs);
+        @include px(3, xs);
+        background-color: $call-primary;
+        cursor: pointer;
+        border: $box-border;
+        border-radius: $box-border-radius;
+        color: white;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold !important;
+        max-width: max-content;
+        text-transform: uppercase;
+        margin-right: auto;
+
+        &.isMobile {
+            margin-right: 0;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .suggestionBannerButtonTitle {
+            display: block;
+            padding-top: 5px;
+            padding-right: 10px;
+        }
+
+        span > svg {
+            transform: rotate(180deg);
+            fill: #FFF !important;
+        }
+
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+
+    .suggestionBannerButtonInline {
+        @include pl(2, xs);
+        @include mt(3, xs);
+        @include mt(0, sm);
+        color: $text-secondary;
+        cursor: pointer;
+        text-decoration: underline !important;
+        text-align: right;
+    }
+}

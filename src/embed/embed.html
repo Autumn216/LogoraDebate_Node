@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Logora - Intégration de contenu</title>
+        <meta name="description" content="Intégration de contenu - Logora">
+        <meta name="author" content="Logora">
+    </head>
+    <body>
+        <div class="logora_embed" data-object-id="logora_config"></div>
+        <script>
+            var params = logoraParseQuery(window.location.search);
+            var logora_config = {
+                shortname: params["shortname"],
+                resource: {
+                    id: params["id"],
+                    name: params["resource"]
+                }
+            };
+            
+            function logoraParseQuery(queryString) {
+                var query = {};
+                var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+                for (var i = 0; i < pairs.length; i++) {
+                    var pair = pairs[i].split('=');
+                    query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+                }
+                return query;
+            }
+        </script>
+    </body>
+</html>

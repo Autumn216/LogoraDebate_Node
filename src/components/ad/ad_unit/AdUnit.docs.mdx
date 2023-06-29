@@ -1,0 +1,23 @@
+---
+description: An ad unit component that displays an ad slot with Google Ad Manager
+labels: ['ad', 'google-ad-manager']
+---
+
+import { AdUnit } from './AdUnit';
+
+The AdUnit component fetches ad configuration from the configuration and displays an ad slot according to the slot.
+It also handles the ads refresh rate callback (every 8 seconds) and configuration to respect the user's cookie consent.
+Consent is managed with didomi and is optional.
+
+### Component usage
+```js
+    import { AdUnit } from '@logora/debate.ad.ad_unit';
+```
+```js
+<ConfigProvider config={ { ads: display: true, googleAdManager: { banner: { id: 'slot-id', path: '/path', sizes: [[300, 250]] } } } }
+    <AdUnit
+        type='banner' 
+        sizes={[300, 250]}
+    />
+</ConfigProvider>
+```

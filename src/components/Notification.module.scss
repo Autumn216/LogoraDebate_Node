@@ -1,0 +1,104 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+
+:global(.logoraContainer) {
+  .notificationItem {
+    @include p(0, xs);
+    @include make-col-ready();
+    @include make-col(12);
+    cursor: pointer;
+    list-style-type: none;
+  }
+
+  .notificationItem a {
+    color: inherit;
+  }
+
+  @media screen and (max-width: 767px) {
+    .notificationItem {
+      min-width: 200px;
+    }
+  }
+
+  .notificationItemBody {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include p(3, xs);
+    @include make-col-ready();
+    @include make-col(12);
+    border-bottom: 1px solid $text-tertiary;
+    background-color: $darken-text-tertiary;
+
+    &:hover {
+      background-color: $darkest-text-tertiary;
+    }
+  }
+
+  .notificationItemBody.read {
+    background-color: white;
+
+    &:hover {
+      background-color: $text-tertiary;
+    }
+  }
+
+  .notificationImageContainer svg {
+    fill: $call-primary;
+  }
+
+  .notificationBorder {
+    @include pt(1.5, xs);
+    @include pb(1, xs);
+    @include my(1, xs);
+    border-top: 1px $text-secondary solid;
+    border-bottom: 1px $text-secondary solid;
+    svg {
+      @include mr(1, xs);
+      @include mb(1, xs);
+    }
+  }
+
+  .notificationImage {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .notificationChallengePoints {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    position: relative;
+  }
+
+  .userPoints {
+    @include mt(1, xs);
+    font-size: $font-size-extra-small;
+    text-align: center;
+    svg {
+      @include ml(1, xs);
+      @include mb(1, xs);
+      display: inline-block;
+      fill: $text-primary !important;
+    }
+  }
+
+  .challengeIcon {
+    position: absolute;
+    top: 25%;
+    right: -5px;
+  }
+
+  .notificationItemContent {
+    @include ml(3, xs);
+    font-size: $font-size-small;
+  }
+
+  .notificationItemDate {
+    font-weight: $font-weight-normal;
+    color: $text-secondary;
+    font-size: $font-size-extra-small;
+  }
+}

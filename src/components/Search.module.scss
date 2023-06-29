@@ -1,0 +1,21 @@
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.tabs/_tabs.scss';
+
+.search {
+    width: 100%;
+    margin-top: 2%;
+}
+
+.searchContainer {
+    @include mt(2, xs);
+}
+
+.searchNav {
+    @include p(0, xs);
+    width: 100% !important;
+}
+
+.tabNumber {
+    font-size: $font-size-small;
+    @include ml(1, xs);
+}

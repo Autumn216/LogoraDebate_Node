@@ -1,0 +1,136 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+
+:global(.logoraContainer) {
+    .modalContainer {
+        @include py(3, xs);
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include justify-content(center, xs);
+        @include media-breakpoint-down(xs) {
+			@include mb(3, xs);
+			@include mt(1, xs);
+		}
+        svg {
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .modalTitle {
+        font-size: 25px;
+        @include mb(3, xs);
+        @include pb(1, xs);
+        border-bottom: 2px solid $text-primary;
+    }
+
+    .navigationContainer {
+        border-right: $box-border;
+    }
+
+    .modalItem {
+        @include py(4, xs);
+        @include display(flex, xs);
+        @include align-items(flex-end, xs);
+        min-height: 80px;
+        position: relative;
+        &.active::after {
+            content: "";
+            width: 41px;
+            height: 3px;
+            position: absolute;
+            right: -20px;
+            top: 43px;
+            z-index: 10;
+            background-color: $call-primary;
+            transform: rotate(90deg);
+        }
+    }
+
+    .suggestionItem {
+        svg {
+            stroke: black;
+            stroke-width: 1.5px;
+			fill: transparent;
+        }
+    }
+
+    .challengeItem {
+        .challengeContainer {
+            @include display(flex, xs);
+        }
+        svg {
+            fill: white;
+            path {
+                fill: black;
+            }
+            circle {
+                stroke: black;
+                stroke-width: 1px;
+            }
+        }
+    }
+
+    .itemContainer {
+        width: 100%;
+        @include display(flex, xs);
+        @include align-items(flex-end, xs);
+        @include pl(2, xs);
+        &.activeItem {
+            @include py(2, xs);
+            @include pl(2, xs);
+            background: rgba(40, 53, 131, .05);
+            border-radius: $box-border-radius 0 0 $box-border-radius;
+        }
+        .newFeatureBadge {
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                background-color: $cancel-primary;
+                height: 8px;
+                width: 8px;
+                top: -5px;
+                right: 50px;
+                border-radius: 100%;
+            }
+        }
+    }
+
+    .profile {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .userImage {
+        border-radius: 50%;
+        max-width: 24px !important;
+        max-height: 24px !important;
+    }
+
+    .text {
+        @include ml(3, xs);
+        @include pr(5, xs);
+        font-size: $font-size-large;
+        line-height: 22px;
+    }
+
+    .mobileExitButton {
+        position: fixed;
+        right: 10px;
+        bottom: 60px;
+        z-index: 100;
+        svg {
+          path, circle {
+            fill: $call-primary;
+            &:last-child {
+              fill: white !important;
+            }
+          }
+        }
+    }
+}

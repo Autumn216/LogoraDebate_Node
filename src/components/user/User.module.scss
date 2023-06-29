@@ -1,0 +1,364 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+@import '~@logora/debate.styles.tabs/_tabs.scss';
+
+:global(.logoraContainer) {
+    #user {
+        color: $text-primary;
+    }
+
+    .fullWidth {
+        @include p(0, xs);
+        @include make-col-ready();
+        @include make-col(12);
+        margin-top: 2%;
+    }
+
+    .userBoxContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include flex-direction(row, sm);
+        @include align-items(flex-start, xs);
+        @include justify-content(center, xs);
+        @include flex-wrap(sm);
+        @include pt(4, xs);
+        @include pb(4, xs);
+        @include px(0, xs);
+        @include mx(0, xs);
+        @include mt(0, sm);
+        @include make-col-ready();
+        @include make-col(12);
+        box-shadow: $box-shadow;
+        border: $box-border;
+        border-radius: $box-border-radius;
+    }
+
+    .userDescriptionBox {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include align-items(center, xs);
+        @include justify-content(flex-start, xs);
+        @include justify-content(flex-end, sm);
+        @include mb(3, xs);
+        @include p(0, xs);
+    }
+
+    .userColumn{
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include align-items(flex-start, xs);
+        @include justify-content(flex-start, xs);
+        @include ml(3, sm);
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+    }
+
+    .userDescriptionImageBox {
+        @include mb(0, xs);
+        // @include media-breakpoint-down(xs) {
+        //     align-self: flex-start;
+        // }
+    }
+
+    .userDescriptionImage {
+        object-fit: cover;
+        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        @include mx(3, xs);
+        @include media-breakpoint-up(sm) {
+            width: 180px;
+            height: 180px;
+        }
+    }
+
+    .userDescriptionContent {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include justify-content(center, xs);
+        @include ml(0, xs);
+        @include mb(4, xs);
+        @include p(0, xs);
+        @include pl(0, xs);
+        .authorNameLine{
+            @include display(flex, xs);
+            flex-wrap: wrap;
+        }
+    }
+
+    .userName {
+        @include mb(0, xs);
+        @include mr(1, xs);
+        font-size: $font-size-large;
+        font-family: inherit !important;
+        font-weight: $font-weight-bold !important;
+    }
+
+    .userPoints {
+        @include mt(1, xs);
+        @include mb(1, xs);
+        @include mr(1, xs);
+        @include px(2, xs);
+        @include py(1, xs);
+        @include display(flex, xs);
+        flex-wrap: nowrap;
+        width: fit-content;
+        font-weight: $font-weight-bold;
+        background-color: $background-color-secondary;
+        border-radius: 15px;
+        svg {
+            @include mx(1, xs);
+        }
+        &.userPointsMobile {
+            font-size: $font-size-small;
+        }
+        .pointsCount {
+            @include mr(1, xs);
+        }
+    }
+
+    .pointsInformations {
+        @include display(flex, sm);
+        @include align-items(center, xs);
+        @include mt(1, xs);
+        color: $call-primary;
+        font-size: $font-size-small;
+        svg {
+            @include mr(1, xs);
+            fill: $call-primary;
+            overflow: visible;
+            path {
+                fill: white;
+            }
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .userStatsLine{
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include justify-content(flex-start, xs);
+        @include align-items(center, xs);
+        @include px(3, xs);
+        @include mb(3, xs);
+        @include mt(3, sm);
+        @include mt(0, xs);
+        @include pl(0, sm);
+        width: 100%;
+        @include make-col-ready();
+        @include make-col(12);
+        @include media-breakpoint-up(sm) {
+            @include make-col(6);
+            height: 120px;
+        }
+    }
+
+    .userDescription {
+        color: $text-secondary;
+        @include mt(2.5, xs);
+        max-width: 350px;
+    }
+
+    .userStatsDebates{
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+    }
+
+    .userStatsBox {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include justify-content(flex-start, xs);
+    }
+
+    .userStatsDebateSuggestions, .userStatsVotes {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include ml-auto(xs);
+        @include ml(5, sm);
+    }
+
+    .userChallenge {
+        @include px(2, xs);
+        @include py(1, xs);
+        @include ml(2, xs);
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        flex-wrap: nowrap;
+        border-radius: $box-border-radius;
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+        cursor: pointer;
+        border: $box-border;
+        border-color: $call-primary;
+        color: $call-primary;
+        svg {
+            @include mr(1, xs);
+            margin-bottom: 2px;
+            fill: $call-primary;
+        }
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+
+    .userEditButtonBox {
+        @include mt(2, xs);
+        padding-right: 5px !important;
+    }
+
+    .userEditButton {
+        text-transform: uppercase;
+        display: block !important;
+    }
+
+    .userTabs {
+        @include mt(1, xs);
+        li {
+            text-transform: capitalize;
+        }
+    }
+
+    .tabPaneTitle {
+        @include mb(2, xs);
+        text-align: center;
+        font-size: $font-size-small;
+        color: $text-secondary;
+    }
+
+    .tabTitle {
+        @include mt(3, xs);
+        font-size: $font-size-normal;
+        font-weight: $font-weight-bold;
+    }
+
+    .userFollowLine{
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include align-items(center, xs);
+        flex-wrap: wrap;
+        @include mb(3, xs);
+        @include mt(0, xs);
+        @include px(3, xs);
+        @include px(0, sm);
+        width: 100%;
+    }
+
+    .userTagsBox{
+        @include mt(3, xs);
+    }
+
+    .userTagsLine {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include justify-content(center, xs);
+        @include align-items(flex-start, xs);
+        @include mb(3, xs);
+        @include mt(0, xs);
+        width: 100%;
+        @include px(0, sm);
+        @include px(3, xs);
+    }
+    
+    .userTagsList{
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include justify-content(flex-start, xs);
+        @include align-items(center, xs);
+        @include flex-wrap(xs);
+        width: 100%;
+    }
+
+    .userTagListTitle{
+        font-size: $font-size-normal;
+        font-weight: $font-weight-bold;
+        color: $text-primary;
+        text-align: left;
+        @include pr(2, xs);
+        @include mb(2, xs);
+    }
+
+    .emptyTags {
+        font-size: $font-size-extra-small;
+        font-style: italic;
+        color: $text-secondary;
+    }
+
+    .tagItem {
+        color: $text-primary;
+        border: 1px solid;
+        border-radius: $box-border-radius;
+        border-color: $tag-border-color;
+        margin-right: 0.5em !important;
+        margin-bottom: 0.5em !important;
+        padding: 7px 10px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+    }
+
+    .tagName{
+        padding: 5px;
+        color: $tag-text-color;
+        text-transform: capitalize;
+    }
+
+    .tagCount{
+        background-color: $tag-text-color;
+        border-radius: 15px;
+        color: white;
+        padding: 4px 7px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+    }
+
+    .tagItemBox{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .tagItem a {
+        color: $call-primary;
+        font-size: $font-size-small;
+        transition: opacity .2s;
+        &:hover{
+            text-decoration: none;
+            opacity: .7;
+        }
+    }
+
+    .eloquenceLine {
+        @include display(flex, xs);
+    }
+
+    .occupationBox {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include align-items(center, xs);
+        font-weight: $font-weight-normal;
+        font-size: $font-size-extra-small;
+        color: $text-primary;
+    }
+
+    .authorPoints {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include px(2, xs);
+        @include py(1, xs);
+        @include mr(1.5, xs);
+        background-color: $background-color-secondary;
+        border-radius: 15px;
+        svg {
+            @include ml(1, xs);
+        }
+    }
+}

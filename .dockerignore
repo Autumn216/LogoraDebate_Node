@@ -1,0 +1,23 @@
+node_modules/
+public/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.platform/
+.ebextensions/
+
+docker-compose*.yml
+Dockerfile
+
+.git
+.github/
+
+terraform/.terraform/
+*.tfstate
+*.tfstate.backup
+*.lock.hcl
+*.lock.info
+*.ipynb
+
+.bit/
+.yarn/

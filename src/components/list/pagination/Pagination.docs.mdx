@@ -1,0 +1,36 @@
+---
+description: A Pagination component.
+labels: ['pagination']
+---
+
+import { Pagination } from './Pagination';
+
+A component that renders a button used to handle pagination of lists. 
+
+### Component usage
+```js
+    import { Pagination } from "@logora/debate.list.pagination";
+```
+```js
+    <Pagination
+        data-tid={"my_tracking_id"}
+        currentPage={1}
+        perPage={10}
+        totalElements={20}
+        onLoadMoreElements={loadMoreElementsCallback}
+        isLoadingMoreElements={isLoadingVar}
+        hasLoadingComponent={false}
+        showMoreText={"Next page"}
+    />
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>data-tid</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*String passed to track data on the pagination button*</font> |
+| <font color='#4646c6'>currentPage</font> | <font color="#397300">integer</font> | &check; | - | <font color="grey">*Page currently loaded*</font> |
+| <font color='#4646c6'>perPage</font> | <font color="#397300">integer</font> | &check; | - | <font color="grey">*Number of elements per page*</font> |
+| <font color='#4646c6'>onLoadMoreElements</font> | <font color="#397300">callback function</font> | &cross; | - | <font color="grey">*Callback function triggered when clicking on pagination button*</font> |
+| <font color='#4646c6'>isLoadingMoreElements</font> | <font color="#397300">boolean</font> | &check; | - | <font color="grey">*Statement about current status of pagination, loading or not loading*</font> |
+| <font color='#4646c6'>hasLoadingComponent</font> | <font color="#397300">boolean</font> | &cross; | - | <font color="grey">*If true, doesn't show loader on loading elements*</font> |
+| <font color='#4646c6'>showMoreText</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*Text to display on pagination button*</font> |

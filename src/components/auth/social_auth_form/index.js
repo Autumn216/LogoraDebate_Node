@@ -1,0 +1,1 @@
+export { SocialAuthForm as default } from './SocialAuthForm';

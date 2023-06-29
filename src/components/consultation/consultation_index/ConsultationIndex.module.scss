@@ -1,0 +1,22 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.tabs/_tabs.scss';
+
+.header {
+    @include mt(3, xs);
+    @include px(3, xs);
+    @include pb(4, xs);
+    box-shadow: $box-shadow;
+    border: $box-border;
+    color: $text-primary;
+    border-radius: $box-border-radius;
+    .title {
+        @include my(2.5, xs);
+        font-size: 24px;
+        font-weight: $font-weight-bold;
+    }
+}
+
+.navigation {
+    @include mt(4, xs);
+}

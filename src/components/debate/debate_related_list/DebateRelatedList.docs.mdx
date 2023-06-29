@@ -1,0 +1,36 @@
+---
+description: A component that retrieves and displays a list of debates related to the current debate or the latest debates.
+---
+
+import { DebateRelatedList } from './DebateRelatedList';
+
+A component that renders a list of debates. Debates are retrieved from the API provided by _DataProvider_.
+
+It should be wrapped around [react-intl](https://formatjs.io/docs/getting-started/installation/)'s IntlProvider.
+
+### Component usage
+```js
+    import DebateRelatedList from '@logora/debate.debate.debate_related_list';
+```
+```js
+<BrowserRouter>
+    <IntlProvider locale="en">
+        <ListProvider>
+            <ConfigProvider config={{ modules: {}, id: 1, ads: {} }} routes={...routes}>
+                <DataProviderContext.Provider value={{ dataProvider: data }}>
+                    <DebateRelatedList 
+                        latestDebate
+                        debateSlug={props.slug}
+                    />
+                </DataProviderContext.Provider>
+            </ConfigProvider>
+        </ListProvider>
+    </IntlProvider>
+</BrowserRouter>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>latestDebates</font> | <font color="#397300">boolean</font> | &cross; | - | <font color="grey">*retrieve last debates instead of related list*</font> |
+| <font color='#4646c6'>debateSlug</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*slug from which related debates are retrieved*</font> |

@@ -1,0 +1,127 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+.suggestionBlankBox {
+    position: relative;
+    height: 100%;
+    @include p(0, xs);
+    @include px(0, xs);
+    @include pt(0, xs);
+    @include pb(0, xs);
+    width: 100% !important;
+    transition: margin-top 2s;
+    border-radius: $box-border-radius;
+    box-shadow: $box-shadow;
+    border: $box-border;
+}
+
+.suggestionHeader {
+    @include p(0, xs);
+    @include pl(3, xs);
+    @include pl(3, sm);
+    @include pb(2, xs);
+    @include pt(0, xs);
+    display: flex !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    position: static;
+}
+
+.authorBox {
+    display: flex !important;
+    align-items: flex-start !important;
+    @include pt(3, xs);
+    @include px(0, xs);
+    @include make-col-ready();
+    @include make-col(8);
+    position: static;
+}
+
+.suggestionPlaceholder {
+    height: 20px;
+    background: $darken-text-tertiary;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.suggestionPlaceholderRound {
+    height: 50px;
+    background: $darken-text-tertiary;
+    min-width: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.suggestionHeaderPlaceholderBox {
+    display: flex !important;
+    flex-direction: column !important;
+    @include make-col-ready();
+    @include make-col(10);
+}
+
+.suggestionPlaceholderMargin {
+    @extend .suggestionPlaceholder;
+    @include mb(2, xs);
+}
+
+.suggestionButton {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: $call-primary;
+    border-radius: $box-border-radius;
+    color: white;
+    width: 220px;
+    height: 40px;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    z-index: 3;
+    max-width: 100%;
+    white-space: break-spaces;
+    text-align: center;
+    &:hover {
+        filter: brightness(110%);
+    }
+}
+
+.suggestionBody {
+    @include p(0, xs);
+    @include px(3, xs);
+    @include px(2, sm);
+    width: 100% !important;
+    font-size: $font-size-small;
+    @include py(2, xs);
+}
+
+.suggestionContent {
+    text-align: left;
+    @include px(3, xs);
+    white-space: pre-line;
+    line-height: 1.5em;
+}
+
+.suggestionFooter {
+    @extend .suggestionBody;
+}
+
+.suggestionVoteContainer {
+    @include px(3, xs);
+    display: flex !important;
+}
+
+.suggestionPlaceholderMarginFooter {
+    @extend .suggestionPlaceholderMargin;
+    @include mr(2, xs);
+    width: 70%;
+}
+
+.suggestionPlaceholderMarginCircleFooter {
+    @include mr(2, xs);
+    background: $darken-text-tertiary;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}

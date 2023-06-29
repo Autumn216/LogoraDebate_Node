@@ -1,0 +1,58 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+  .voteButton {
+    cursor: pointer;
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include align-items(center, xs);
+    @include justify-content(flex-start, xs);
+  }
+
+  .voteIcon {
+    cursor: pointer;
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include align-items(center, xs);
+    @include justify-content(flex-start, xs);
+    margin-top: -3px;
+  }
+
+  .active {
+    font-weight: $font-weight-bold;
+    color: $call-primary;
+    & svg {
+      fill: $call-primary;
+      stroke: $for-primary;
+      fill-rule: evenodd;
+    }
+  }
+
+  .active.position-1 {
+    color: $for-primary;
+    & svg {
+      fill: $for-primary;
+      stroke: $for-primary;
+      fill-rule: evenodd;
+    }
+  }
+  .active.position-2 {
+    color: $against-primary;
+    & svg {
+      fill: $against-primary;
+      stroke: $for-primary;
+      fill-rule: evenodd;
+    }
+  }
+  .active.position-3 {
+    color: $third-position-color-primary;
+    & svg {
+      fill: $third-position-color-primary;
+      stroke: $for-primary;
+      fill-rule: evenodd;
+    }
+  }
+}

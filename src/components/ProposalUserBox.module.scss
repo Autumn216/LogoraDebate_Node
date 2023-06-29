@@ -1,0 +1,60 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import "~@logora/debate.styles.spacing/_spacing.scss";
+@import "~@logora/debate.styles.flex/_flex.scss";
+@import "~@logora/debate.styles.display/_display.scss";
+
+:global(.logoraContainer) {
+    .proposalUserBox {
+		border: $box-border;
+		box-shadow: $box-shadow;
+		border-radius: $box-border-radius;
+		@include p(3, xs);
+	}
+
+    .proposalUserBoxHeader {
+		@include display(flex, xs);
+		@include flex-direction(column, xs);
+		width: 100%;
+	}
+
+	.proposalTitleBox {
+		@include display(flex, xs);
+		@include flex-direction(column, xs);
+		@include flex-direction(row, sm);
+		@include align-items(flex-start, xs);
+		@include justify-content(space-between, xs);
+		@include mb(2, xs);
+	}
+
+    .proposalUserBoxTitle {
+        font-family: inherit !important;
+		font-weight: $font-weight-bold !important;
+    }
+
+	.consultationEnded, .consultationInProgress {
+        @include py(1, xs);
+        @include px(2, xs);
+		@include mb(2, xs);
+        width: fit-content;
+        border-radius: $box-border-radius;
+        color: white;
+        font-size: $font-size-small;
+    }
+
+	.consultationEnded {
+        background-color: $info-primary;
+	}
+
+	.consultationInProgress {
+        background-color: $success-primary;
+	}
+
+    .proposalUserBoxBody {
+        @include p(0, xs);
+		@include pb(3, xs);
+		position: relative;
+		border: $box-border;
+		box-shadow: $box-shadow;
+		border-radius: $box-border-radius;
+    }
+}

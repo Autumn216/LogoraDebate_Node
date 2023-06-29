@@ -1,0 +1,72 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import "~@logora/debate.styles.spacing/_spacing.scss";
+@import "~@logora/debate.styles.flex/_flex.scss";
+@import "~@logora/debate.styles.display/_display.scss";
+
+:global(.logoraContainer) {
+	.replyInputContainer {
+		border-radius: $box-border-radius;
+		box-shadow: $box-shadow;
+		transition: margin-top 2s;
+		border: $box-border;
+		@include mt(2, xs);
+		@include px(0, xs);
+		position: relative;
+		&::before {
+			content: "";
+			border-left: 8px solid;
+			border-left-color: $call-primary;
+			position: absolute;
+			width: 8px;
+			height: 10px;
+			top: -10px;
+			left: 4em;
+		}
+	}
+
+	.replyEditorRow {
+		@include display(flex, xs);
+		@include flex-direction(row, xs);
+		@include justify-content(flex-start, xs);
+		@include align-items(flex-start, xs);
+		@include px(2, xs);
+		@include py(2, xs);
+		width: 100%;
+	}
+
+	.replyInputForm {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.textEditorBox {
+		width: 100%;
+	}
+
+	.replyInputAuthorImage {
+		align-self: flex-start;
+		@include mr(2, xs);
+		margin-top: 12px;
+	}
+
+	.replyInputWarning {
+		font-size: $font-size-extra-small;
+		color: $cancel-primary;
+		@include mt(3, xs);
+	}
+
+	.disabledInputMask {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		opacity: 0.9;
+		background: $text-tertiary;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		font-style: italic;
+	}
+}

@@ -1,0 +1,134 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+.header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    @include mb(2, xs);
+}
+
+.totalComments {
+    color: $call-primary;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+}
+
+.footer {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+    @include pt(2, xs);
+}
+
+.footerOneLine {
+    @extend .footer;
+    padding: 8px 15px;
+    box-shadow: $button-box-shadow;
+    border-radius: $box-border-radius;
+    border: $box-border;
+}
+
+.commentBox {
+    padding: 4px 8px;
+    border-radius: $box-border-radius;
+    border: $box-border;
+    @include mb(2, xs);
+}
+
+.commentContent {
+    padding: 10px;
+    text-align: left !important;
+}
+
+.commentsSynthesisBoxLink {
+    text-decoration: underline;
+    color: $call-primary !important;
+    @include mr(0, xs);
+    @include mr(3, sm);
+    @include mb(3, xs);
+    @include mb(0, sm);
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.callToAction {
+    background-color: $call-primary !important;
+    font-weight: $font-weight-bold;
+    color: white !important;
+    width: max-content !important;
+    border-radius: $box-border-radius;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    text-align: center;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .callToAction {
+        width: 100% !important;
+    }
+}
+
+.headerLiveStat {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    @include mr(2, xs);
+    color: $call-primary;
+    font-size: $font-size-small;
+    margin-left: 30px;
+    span {
+        margin-left: 10px;
+        @include mb(0, xs);
+    }
+}
+
+.headerLiveNow {
+    min-width: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $call-primary;
+    position: relative;
+    &::before{
+        content:"";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $call-primary;
+        opacity: 0.4;
+        animation-name: livePin;
+        animation-duration: 1.6s;
+        animation-iteration-count: infinite;
+    }
+}
+
+.headerLivePin {
+    @include display(block, sm);
+    @include display(none, xs);
+}
+
+.headerLivePinMobile {
+    @include display(none, sm);
+    @include display(block, xs);
+}
+
+@keyframes livePin { 
+    0% { transform: scale(2.3) }
+    50% { transform: scale(0) }
+    100% { transform: scale(2.3) }
+}
+
+.readMoreLink {
+    font-weight: $font-weight-bold;
+}

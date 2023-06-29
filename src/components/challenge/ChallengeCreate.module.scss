@@ -1,0 +1,100 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .challengeCreateContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include mt(3, xs);
+
+        .title{
+            font-size: $font-size-large;
+            font-weight: $font-weight-bold;
+        }
+
+        .subtitle{
+            @include mt(2,x s);
+        }
+
+        .contextHintHeader {
+            @include p(3, xs);
+            border-radius: $box-border-radius;
+            background-color: $call-primary !important;
+            color: white;
+        }
+
+        .contextHintDisabled {
+            @include mb(3, xs);
+        }
+    }
+
+    .contextHeaderLine{
+        @include display(flex, xs);
+        @include justify-content(flex-start, xs);
+        @include align-items(center, xs);
+        @include flex-direction(row, xs);
+        @include my(3, xs);
+    }
+
+    svg.versusIcon {
+        @include mr(2, xs);
+        ellipse {
+            fill: white;
+        }
+        path:first-child {
+            stroke: white;
+        }
+        path:last-child {
+            fill: $call-primary !important;
+            stroke: $call-primary !important;
+        }
+    }
+
+    .headerIcon {
+        @include mr(2, xs);
+        fill: white !important;
+    }
+
+    .annoucementChallenge {
+        @include mt(1, xs);
+    }
+
+    .pointsRestriction {
+        @include mb(1.5, xs);
+        svg {
+            @include ml(1, xs);
+        }
+        .userPoints {
+            font-weight: $font-weight-bold;
+        }
+        .pointsText {
+            @include mr(1, xs);
+        }
+    }
+
+    .pointsInformations {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include mt(1, xs);
+        color: $call-primary !important;
+        font-size: $font-size-small;
+        width: fit-content;
+        svg {
+            @include mr(1, xs);
+            fill: $call-primary !important;
+            overflow: visible;
+            path {
+                fill: white;
+            }
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .listDisabled {
+        opacity: .5;
+    }
+}

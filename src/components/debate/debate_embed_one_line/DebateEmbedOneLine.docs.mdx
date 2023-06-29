@@ -1,0 +1,25 @@
+---
+description: A box to embed a debate with a link and a call-to-action.
+labels: ['debate', 'embed']
+---
+
+import { DebateEmbedOneLine } from './DebateEmbedOneLine';
+import { IntlProvider } from 'react-intl';
+import { BrowserRouter } from 'react-router-dom';
+
+A box to embed the debate with a link and call-to-action.
+It must be wrapped with IntlProvider, ConfigProvider, and be inside a Router from react-router.
+
+### Component usage
+```js
+    import { DebateEmbedOneLine } from '@logora/debate.debate.debate_embed_one_line';
+```
+```js
+    <BrowserRouter>
+        <IntlProvider locale="en">
+            <ConfigProvider routes={{...routes}}>
+                <DebateEmbedOneLine debate={{ name: "My debate", slug: "debate-slug" }} />
+            </ConfigProvider>
+        </IntlProvider>
+    </BrowserRouter>
+```

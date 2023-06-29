@@ -1,0 +1,97 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+  .modalContent {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include align-items(center, xs);
+    @include justify-content(center, xs);
+    text-align: center;
+    @include my(2, xs);
+    @include p(0, xs);
+  }
+
+  .senderActionContainer {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include align-items(center, xs);
+  }
+
+  .senderContainer {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include align-items(center, xs);
+    @include mr(2, xs);
+  }
+
+  .senderImageContainer {
+    @include mr(2, xs);
+  }
+
+  .senderImage {
+    height: 40px;
+    width: 40px;
+  }
+
+  .senderName {
+    font-weight: $font-weight-bold;
+  }
+
+  .groupName {
+    font-weight: $font-weight-bold;
+    text-align: center;
+    font-size: 1.2em;
+    @include my(2, xs);
+  }
+
+  .invitationPositionContainer {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include align-items(center, xs);
+  }
+
+  .invitationPosition {
+    @include ml(1, xs);
+    font-weight: $font-weight-bold;
+  }
+
+  .actionQuestion {
+    @include mt(3, xs);
+  }
+
+  .modalActions {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include align-items(center, xs);
+    @include justify-content(center, xs);
+    @include mt(3, xs);
+    @include p(0, xs);
+    @include make-col-ready();
+    @include make-col(12);
+  }
+
+  button.modalActionLeft {
+    @include px(5, xs);
+    @include mr(4, xs);
+    background-color: $success-primary !important;
+    border-color: $success-primary !important;
+    &:hover {
+      background-color: $success-primary !important;
+      border-color: $success-primary !important;
+    }
+  }
+
+  button.modalActionRight {
+    @include px(5, xs);
+    @include ml(4, xs);
+    background-color: $cancel-primary !important;
+    border-color: $cancel-primary !important;
+    &:hover {
+      background-color: $cancel-primary !important;
+      border-color: $cancel-primary !important;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export { AnnouncementDialog as default } from './AnnouncementDialog';

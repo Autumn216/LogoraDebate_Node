@@ -1,0 +1,169 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import "~@logora/debate.styles.display/_display.scss";
+@import "~@logora/debate.styles.flex/_flex.scss";
+@import "~@logora/debate.styles.spacing/_spacing.scss";
+
+:global(.logoraContainer) {
+	.argument {
+		border-radius: $box-border-radius;
+		box-shadow: $box-shadow;
+		transition: margin-top 2s;
+		border: $box-border;
+		scroll-margin-top: 80px;
+		@include px(0, xs);
+	}
+	
+	.argumentReply {
+		position: relative;
+		background-color: $text-tertiary;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		box-shadow: $box-shadow;
+		border-top-right-radius: $box-border-radius;
+		border-bottom-right-radius: $box-border-radius;
+		@include ml(3, sm);
+		@include ml(2, xs);
+		@include mr(1, sm);
+		@include mr(0, xs);
+		@include px(0, xs);
+		border-left: 2px solid;
+		border-left-color: $call-primary !important;
+		&.position-1 {
+			border-left-color: $for-primary !important;
+		}
+		&.position-2 {
+			border-left-color: $against-primary !important;
+		}
+		&.position-3 {
+			border-left-color: $third-position-color-primary !important;
+		}
+		@for $i from 1 through 5 {
+			&.level-#{$i} {
+				margin-left: #{$i}em !important;
+			}
+		}
+		&::before {
+			content: "";
+			border-left: 4px solid $text-secondary;
+			position: absolute;
+			width: 4px;
+			height: 10px;
+			top: -10px;
+			left: 2em;
+		}
+	}
+
+	.flash {
+		-webkit-transition: box-shadow 0.8s ease-in-out;
+		-moz-transition: box-shadow 0.8s ease-in-out;
+		-o-transition: box-shadow 0.8s ease-in-out;
+		transition: box-shadow 0.8s ease-in-out;
+		box-shadow: 0 0 15px $call-primary;
+	}
+	.position-1.flash {
+		box-shadow: 0 0 15px $for-primary;
+	}
+	.position-2.flash {
+		box-shadow: 0 0 15px $against-primary;
+	}
+	.position-3.flash {
+		box-shadow: 0 0 15px $third-position-color-primary;
+		@include mt(2, xs);
+	}
+	
+	.argumentBody {
+		font-size: $font-size-small;
+		padding: 12px 1em;
+	}
+
+	.fixedHeight {
+		height: 100px;
+		overflow: hidden;
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			pointer-events: none;
+			background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+			width: 100%;
+			height: 5em;
+		}
+	}
+
+	.challengeBannerArgument {
+		min-height: 148px;
+	}
+
+	.commentArgument {
+		@include py(3, xs);
+		border-bottom: 0;
+	}
+
+	.argumentContent {
+		line-height: 1.5em;
+		overflow-wrap: break-word;
+		& * {
+			font-size: $font-size-small;
+		}
+	}
+
+	.argumentSourcesList {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 1em 1.5em !important;
+		font-size: $font-size-extra-small;
+		font-weight: $font-weight-normal;
+	}
+
+	.argumentSourcesList a {
+		text-decoration: none;
+	}
+
+	.replyTo {
+		@include pb(2, xs);
+		@include display(flex, xs);
+		@include flex-direction(row, xs);
+		@include align-items(flex-start, xs);
+		font-size: $font-size-extra-small;
+		color: $text-secondary;
+		cursor: pointer;
+		overflow: hidden;
+		white-space: nowrap;
+		span {
+			@include pl(1, xs);
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		svg {
+			padding: 2px 0 0 2px;
+			fill: $text-secondary;
+		}
+	}
+
+	.replyingTo {
+		display: flex !important;
+	}
+
+	.headerPosition-0 {
+		text-transform: uppercase;
+		background-color: $call-primary;
+	}
+	.headerPosition-1 {
+		text-transform: uppercase;
+		background-color: $for-primary;
+	}
+	.headerPosition-2 {
+		text-transform: uppercase;
+		background-color: $against-primary;
+	}
+	.headerPosition-3 {
+		text-transform: uppercase;
+		background-color: $third-position-color-primary;
+	}
+}

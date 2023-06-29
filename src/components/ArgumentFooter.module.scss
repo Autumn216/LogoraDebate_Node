@@ -1,0 +1,148 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+:global(.logoraContainer) {
+    .argumentFooter {
+        font-size: $font-size-normal;
+        font-weight: $font-weight-normal;
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include justify-content(space-between, xs);
+        @include make-col-ready();
+        @include make-col(12);
+        padding: 12px 1em 1em;
+        &.commentArgumentFooter {
+            @include align-items(flex-end, xs);
+            @include media-breakpoint-down(sm) {
+                @include pl(4, xs);
+            }
+        }
+    }
+
+    .argumentFooter svg {
+        fill-rule: evenodd;
+    }
+
+    .argumentFooterReplies{
+        @extend .argumentFooter;
+        @include justify-content(flex-start, xs);
+        cursor: pointer;
+        &.commentArgumentFooterReplies {
+            @include pt(3, xs);
+            border-top: 1px solid $text-tertiary;
+            @include media-breakpoint-down(sm) {
+                @include pl(4, xs);
+            }
+        }
+    }
+
+    .argumentVoteAction {
+        @include p(0, xs);
+    }
+
+    .argumentActionText {
+        @include display(none, xs);
+        @include display(flex, sm);
+        @include flex-direction(row, xs);
+        @include align-items(center, xs);
+    }
+
+    .argumentMoreAction {
+        cursor: pointer;
+        text-align: right;
+    }
+
+    .argumentShowRepliesAction {
+        text-align: right;
+        @include p(0, xs);
+    }
+
+    .argumentCommentReply {
+        @include ml(4, xs);
+        @include display(flex, xs);
+        flex-grow: 2;
+    }
+
+    .argumentReplyAction{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        .commentReplyText {
+            @include ml(2, xs);
+        }
+    }
+
+    .argumentShowRepliesActionButton {
+        border: none;
+        position: relative;
+        cursor: pointer;
+        @include p(0, xs);
+        @include px(2, xs);
+        &::before{
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 7px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 4px 0 4px;
+            border-color: #000000 transparent transparent;
+        }
+        &.active{
+            &::before{
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .createChallenge {
+        cursor: pointer;
+        svg {
+            fill: white;
+            path {
+                fill: black;
+            }
+            circle {
+                stroke: black;
+                stroke-width: 1px;
+            }
+        }
+    }
+
+    .dropdownItem{
+        display: block;
+        width: 100%;
+        @include p(2, xs);
+        @include px(3, xs);
+        clear: both;
+        text-align: inherit; 
+        white-space: nowrap;
+        background-color: transparent; 
+        border: 0;
+        text-align: left;
+        font-size: $font-size-small;
+        &:hover{
+            background-color: $text-tertiary;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .argumentFooter {
+            font-size: $font-size-extra-small;
+        }
+    }
+
+    .argumentFooter[max-width~="1280px"] {
+        .argumentReplyAction, .argumentShowReplyAction {
+            font-size: $font-size-extra-small;
+        }
+
+        .argumentActionText {
+            display: none !important;
+        }
+    }
+}

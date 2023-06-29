@@ -1,0 +1,114 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import "~@logora/debate.styles.spacing/_spacing.scss";
+@import "~@logora/debate.styles.flex/_flex.scss";
+@import "~@logora/debate.styles.display/_display.scss";
+
+:global(.logoraContainer) {
+	.argumentUserBox {
+		padding: 1.5em 0 !important;
+		border-bottom: 2px dotted $darkest-text-tertiary;
+	}
+
+	.argumentUserBoxHeader {
+		@include display(flex, xs);
+		@include flex-direction(column, xs);
+		@include pb(3, xs);
+		width: 100%;
+	}
+
+	.argumentTitleBox {
+		@include display(flex, xs);
+		@include flex-direction(column, xs);
+		@include flex-direction(row, sm);
+		@include align-items(flex-start, xs);
+		@include justify-content(space-between, xs);
+		@include mb(2, xs);
+	}
+
+	.argumentUserBoxHeaderStats {
+		color: $text-primary;
+		@include display(flex, xs);
+		@include justify-content(flex-start, xs);
+		@include align-items(center, xs);
+		svg {
+			width: 1.5em;
+		}
+	}
+
+	.argumentUserBoxPercentage {
+		margin-left: auto;
+	}
+
+	.argumentUserBoxStatItem {
+		margin-right: 10px;
+	}
+
+	.argumentUserBoxDebateTitle {
+		font-family: inherit !important;
+		font-weight: $font-weight-bold !important;
+	}
+
+	.argumentUserBoxBody {
+		@include p(0, xs);
+		@include pb(3, xs);
+		position: relative;
+		border: $box-border;
+		box-shadow: $box-shadow;
+		border-radius: $box-border-radius;
+	}
+
+	.argumentUserBoxContent {
+		@include mx(3, xs);
+		@include my(3, xs);
+		text-align: left !important;
+		word-break: break-word;
+	}
+
+	.argumentUserBoxFooter {
+		@include pt(3, xs);
+		@include pb(1, xs);
+		@include px(3, xs);
+		@include display(flex, xs);
+		@include justify-content(space-between, xs);
+	}
+
+	.argumentUserBoxReplyAction {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.argumentUserBoxActionText {
+		@include display(none, xs);
+		@include display(block, sm);
+	}
+
+	.readMoreLink {
+		color: $text-primary !important;
+		display: inline;
+		text-decoration: underline;
+		@include ml(1, xs);
+		&:hover {
+			cursor: pointer;
+			color: $text-primary !important;
+		}
+	}
+
+	.headerPosition-0 {
+		text-transform: uppercase;
+		background-color: $call-primary;
+	}
+	.headerPosition-1 {
+		text-transform: uppercase;
+		background-color: $for-primary;
+	}
+	.headerPosition-2 {
+		text-transform: uppercase;
+		background-color: $against-primary;
+	}
+	.headerPosition-3 {
+		text-transform: uppercase;
+		background-color: $third-position-color-primary;
+	}
+}

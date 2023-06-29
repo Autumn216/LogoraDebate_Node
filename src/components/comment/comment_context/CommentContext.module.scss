@@ -1,0 +1,89 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+.contextContainer {
+    @include mb(2, xs);
+    display: flex !important;
+    background-color: white;
+    border-radius: $box-border-radius;
+    box-shadow: $box-shadow;
+    border: $box-border;
+}
+
+.articleInformations {
+    @include p(3, xs);
+    &.articleWithImage {
+        width: 60%;
+    }
+}
+
+.articleImage {
+    width: 40%;
+    .contextImage {
+        border-radius: 0 6px 6px 0;
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }
+}
+
+.date {
+    color: $text-secondary; 
+}
+
+.title {
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    @include mt(2, xs);
+    @include mb(2, xs);
+    overflow-wrap: break-word;
+}
+
+.backLink {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+}
+
+.commentsCountBox {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: fit-content !important;
+    cursor: default;
+    padding: 7px 10px;
+    margin-right: 10px;
+    margin-top: 10px !important;
+    background-color: $background-color-secondary;
+    border-radius: $box-border-radius;
+    svg {
+        margin-right: 6px;
+    }
+}
+
+.commentsCount {
+    text-align: left;
+    @include p(0, xs);
+}
+
+@include media-breakpoint-down(sm) {
+    .contextContainer {
+        flex-direction: column !important;
+    }
+
+    .articleInformations {
+        @include p(3, xs);
+        width: 100% !important;
+        order: 2;
+    }
+
+    .articleImage {
+        width: 100%;
+        order: 1;
+        .contextImage {
+            max-height: 200px;
+            border-radius: $box-border-radius $box-border-radius 0 0;
+        }
+    }
+};

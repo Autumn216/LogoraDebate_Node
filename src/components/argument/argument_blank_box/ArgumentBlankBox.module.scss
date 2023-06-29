@@ -1,0 +1,108 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+.argumentBlankBox {
+  position: relative;
+  transition: margin-top 2s;
+  border-radius: $box-border-radius;
+  box-shadow: $box-shadow;
+  border: $box-border;
+  @include p(3, xs);
+}
+
+.argumentHeader {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  @include mb(3, xs);
+}
+
+.authorBox {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+
+.argumentPlaceholderRound {
+  height: 50px;
+  background: $darken-text-tertiary;
+  min-width: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.argumentHeaderPlaceholderBox {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-around !important;
+  height: 50px;
+  @include pl(2, xs);
+}
+
+.argumentPlaceholder {
+  height: 20px;
+  width: 150px;
+  background: $darken-text-tertiary;
+  border-radius: $box-border-radius;
+}
+
+.argumentHeaderRight {
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: flex-end !important;
+	justify-content: center !important;
+	padding: 0 !important;
+	width: max-content;
+	margin-left: auto;
+}
+
+.argumentPositionBox {
+	font-weight: $font-weight-bold;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: flex-end !important;
+	border-radius: $box-border-radius;
+	background-color: $call-primary;
+}
+
+.argumentPosition {
+	font-size: $font-size-extra-small;
+	color: white;
+	@include line-clamp(2);
+	max-height: 3.4em;
+	@include px(2.5, xs);
+	@include py(2, xs);
+}
+
+.placeholderFullWidth {
+  height: 20px;
+  width: 100% !important;
+  background: $darken-text-tertiary;
+  border-radius: $box-border-radius;
+}
+
+.placeholderFullWidthMargin {
+  @extend .placeholderFullWidth;
+  @include mb(2, xs);
+}
+
+.argumentBlankButton {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-weight: $font-weight-bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  max-width: 100%;
+  white-space: break-spaces;
+  text-align: center;
+  background: $call-primary !important;
+  &:hover {
+    filter: brightness(110%);
+    background: $call-primary !important;
+  }
+}

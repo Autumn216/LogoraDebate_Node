@@ -1,0 +1,32 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-shadow: $box-shadow;
+    border: $box-border;
+    color: $text-primary;
+    border-radius: $box-border-radius;
+    background: #FFF;
+}
+
+.selected {
+    background-color: $success-primary !important;
+    color: white;
+}
+
+.expired {
+    background-color: white;
+    color: $text-secondary;
+    border: none !important;
+}
+
+.suggestion {
+    @include px(3, xs);
+    @include py(2, xs);
+    font-weight: $font-weight-bold;
+    line-height: 1.5em;
+    min-height: 5.6em;
+}

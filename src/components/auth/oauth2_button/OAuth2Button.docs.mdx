@@ -1,0 +1,45 @@
+---
+description: A button to login with the OAuth2 protocol.
+labels: ['auth', 'oauth2']
+---
+
+import { OAuth2Button } from './OAuth2Button';
+import { MemoryRouter } from "react-router";
+
+A button component to login to an OAuth2 provider. It uses [react-oauth-popup](https://www.npmjs.com/package/react-oauth-popup) under the hood.
+
+When clicking on the button, a popup will appear containing the auth form passed with _authDialogUrl_. User can the provide credentials and will be
+redirected to _redirectUri_ afterwards.
+
+### Component usage
+```js
+import OAuth2Button from '@logora/debate.auth.oauth2_button';
+```
+```js
+    <MemoryRouter>
+        <OAuth2Button 
+            authDialogUrl={"https://www.facebook.com/v9.0/dialog/oauth"}
+            clientId={"facebook-client-id"}
+            scope={"email,public_profile"}
+            provider={"facebook"}
+            redirectUri={"https://auth.redirect/}
+            onCode={(code) => console.log(code)}
+            onClose={closeCallbackFunction}
+        >
+            Click here to login !
+        </OAuth2Button>
+    </MemoryRouter>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>authDialogUrl</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*popup dialog URL*</font> |
+| <font color='#4646c6'>clientId</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*oauth2 client ID*</font> |
+| <font color='#4646c6'>scope</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*oauth2 scope*</font> |
+| <font color='#4646c6'>redirectUri</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*oauth2 redirect URI*</font> |
+| <font color='#4646c6'>responseType</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*oauth2 response type*</font> |
+| <font color='#4646c6'>provider</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*provider name that will be passed with the onCode callback*</font> |
+| <font color='#4646c6'>onCode</font> | <font color="#397300">function</font> | &check; | - | <font color="grey">*callback triggered if auth is successful*</font> |
+| <font color='#4646c6'>onClose</font> | <font color="#397300">function</font> | &cross; | - | <font color="grey">*callback triggered if popup is closed*</font> |
+| <font color='#4646c6'>children</font> | <font color="#397300">React element</font> | &cross; | - | <font color="grey">*button children*</font> |

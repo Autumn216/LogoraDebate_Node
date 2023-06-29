@@ -1,0 +1,60 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.container {
+    display: flex !important;
+    flex-direction: row !important;
+    border: $box-border;
+    border-radius: $box-border-radius;
+    box-shadow: $box-shadow;
+    visibility: visible;
+    transition: visibility 0s 2s;
+    @include p(3, xs);
+    &.info {
+        background-color: $call-primary;
+    }
+    &.success {
+        background-color: $success-primary;
+    }
+    &.error {
+        background-color: $cancel-primary;
+    }
+}
+
+.body {
+    @include mr(5, xs);
+}
+
+.closeContainer {
+    margin-left: auto !important;
+}
+
+.closeButton {
+    outline: none;
+    background-color: none !important;
+    border: none !important;
+    color: white !important;
+    cursor: pointer;
+    font-size: $font-size-extra-small;
+}
+
+.message {
+    font-size: $font-size-normal;
+    color: white;
+}
+
+.points {
+    display: flex !important;
+    @include px(2, xs);
+    @include py(1, xs);
+    @include mt(3, xs);
+    width: fit-content;
+    background-color: #f6c206;
+    border-radius: 25px;
+    font-size: $font-size-small;
+    color: black;
+    .textPoints {
+        width: fit-content;
+        @include mr(1, xs);
+    }
+}

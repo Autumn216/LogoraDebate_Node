@@ -1,0 +1,160 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+
+.consultationContextContainer {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include justify-content(center, xs);
+    @include mt(3, xs);
+    box-shadow: $box-shadow;
+    border: $box-border;
+    color: $text-primary;
+    border-radius: $box-border-radius;
+}
+
+.consultationContextImageContainer {
+    border: $box-border;
+    border-radius: $box-border-radius;
+    box-shadow: $box-shadow;
+    color: #222;
+    @include p(4, xs);
+    @include mt(4, xs);
+    max-width: 500px;
+    // Fix Safari
+    @include display(flex, xs);
+
+}
+
+.consultationContextImage {
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: $box-border-radius;
+    width: 100%;
+    // Fix Safari
+    @include align-self(flex-start, xs);
+}
+
+.consultationContext {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include py(1, xs);
+    @include py(3, sm);
+    @include px(3, xs);
+    @include px(5, sm);
+}
+
+.consultationHeader {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include pt(3, xs);
+    @include pb(1, xs);
+    border-bottom: $box-border;
+    line-height: 1.4;
+}
+
+.consultationHeaderContainer {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+}
+
+.consultationHeaderTitle {
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    font-family: $title-font-family;
+    font-size: $font-size-normal;
+    @include pb(1, xs);
+}
+
+.consultationStats {
+    @include display(flex, xs);
+    @include flex-direction(column, xs);
+    @include flex-direction(row, sm);
+    @include flex-wrap(xs);
+    @include align-items(center, sm);
+    color: $text-secondary;
+    > :first-child {
+    @include mr(4, xs);
+    }
+    p {
+    @include pt(1, xs);
+    @include m(0, xs);
+    }
+}
+
+.consultationStatsBody {
+    @include display(flex, xs);
+    @include align-items(center, xs);
+    @include mt(2, xs);
+    @include mt(0, sm);
+    flex-grow: 1;
+}
+
+.consultationsStatsIcons {
+    @include display(flex, xs);
+    @include flex-direction(row, xs);
+    @include p(0, xs);
+    margin-right: auto;
+    .consultationStatsBox {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        font-size: $font-size-small;
+        padding: 5px 10px;
+        margin-right: 10px;
+        background-color: #f0f0f0 !important;
+        border-radius: $box-border-radius;
+        svg {
+            margin-left: 6px;
+            fill: $text-secondary !important;
+        }
+    }
+}
+
+.consultationEnded, .consultationInProgress{
+    @include py(1, xs);
+    @include px(2, xs);
+    @include mb(2, xs);
+    width: fit-content;
+    border-radius: $box-border-radius;
+    color: white;
+    font-size: $font-size-small;
+    @include media-breakpoint-down(sm) {
+        @include mt(2, xs);
+    }
+}
+
+.consultationEnded {
+    background-color: $text-secondary;
+}
+
+.consultationInProgress {
+    background-color: $info-primary;
+}
+
+.consultationTitle {
+    @include py(2, xs);
+    border-bottom: $box-border;
+    font-size: 28px;
+    font-weight: $font-weight-bold;
+}
+
+.consultationDescription {
+    line-height: 1.4;
+    @include py(3, xs);
+    border-bottom: $box-border;
+    > a {
+    text-decoration: underline !important;
+    }
+}
+.consultationProgressBar {
+    @include mt(2, xs);
+    max-width: 500px;
+    .consultationProgress {
+        @include mt(2, xs);
+        height: 15px;
+        width: 100%;
+        border-radius: $box-border-radius;
+        background-color: $background-color-secondary !important;
+    }
+}

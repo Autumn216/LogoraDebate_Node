@@ -1,0 +1,1 @@
+export { CommentsEmbed } from './CommentsEmbed';

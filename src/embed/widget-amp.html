@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Logora - Synthèse du débat</title>
+    <meta name="description" content="Synthèse du débat - Logora">
+    <meta name="author" content="Logora">
+  </head>
+  <body>
+    <div class="logora_container" data-object-id="logora_config"></div>
+    <script>
+        window.parent.postMessage({
+          sentinel: 'amp',
+          type: 'embed-size',
+          height: document.body.scrollHeight
+        }, '*');
+
+        var params = logoraParseQuery(window.location.search);
+        var logora_config = {
+            shortname: params["shortname"],
+            debate: {
+                identifier: params["id"],
+                insertType: "amp",
+            }
+        };
+        function logoraParseQuery(queryString) {
+            var query = {};
+            var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i].split('=');
+                query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+            }
+            return query;
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+---
+description: A modal to report some content.
+labels: ['modal', 'report']
+---
+
+import { ReportModal } from './ReportModal';
+import { IntlProvider } from 'react-intl';
+import { ModalProvider } from '@logora/debate.dialog.modal';
+
+A modal component that enables user to submit a report about some content.
+
+Two inputs are provided : one to define the object of the report, and one to give more details about the report.
+
+On submit, data is sent to the API defined through DataProvider.
+
+### Component usage
+```js
+    import ReportModal from '@logora/debate.report.report_modal';
+```
+```js
+    <IntlProvider locale="en">
+        <ModalProvider>
+            <ReportModal
+                reportableId={34}
+                reportableType={"argument"}
+                title={"Report this argument"}
+            />
+        </ModalProvider>
+    </IntlProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>reportableId</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*reported content identifier*</font> |
+| <font color='#4646c6'>reportableType</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*reported content type*</font> |
+| <font color='#4646c6'>title</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*modal title*</font> |

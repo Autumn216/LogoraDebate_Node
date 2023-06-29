@@ -1,0 +1,39 @@
+---
+description: A box information component.
+---
+
+import { InformationBox } from './InformationBox';
+import { IntlProvider } from 'react-intl';
+
+A box that renders a piece of information with title, description, icon and link redirection.
+
+It should be wrapped around [react-intl](https://formatjs.io/docs/getting-started/installation/)'s IntlProvider.
+
+### Component usage
+```js
+import InformationBox from '@logora/debate.box.information_box';
+```
+```js
+<IntlProvider locale="en">
+    <InformationBox 
+        icon={YourIcon}
+        title={"Your title"}
+        points={100} 
+        description={"Your description"}
+        textLink={"Your text link"}
+        link={"Router link"}
+        isActive={false}
+    />
+</IntlProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>icon</font> | <font color="#397300">icon</font> | &cross; | - | <font color="grey">*icon to display*</font> |
+| <font color='#4646c6'>title</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*box title*</font> |
+| <font color='#4646c6'>points</font> | <font color="#397300">integer</font> | &cross; | - | <font color="grey">*points reward*</font> |
+| <font color='#4646c6'>description</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*box description*</font> |
+| <font color='#4646c6'>textLink</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*link's text*</font> |
+| <font color='#4646c6'>link</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*router link*</font> |
+| <font color='#4646c6'>isActive</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*if true, enable link and redirection*</font> |

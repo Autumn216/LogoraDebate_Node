@@ -1,0 +1,33 @@
+---
+description: A link component styled as a button.
+labels: ['button']
+---
+
+import { LinkButton } from './LinkButton';
+import { MemoryRouter } from "react-router";
+
+A component that renders a button that navigates to provided link.
+
+LinkButton is using the Link component from react-router, that's why it should be used inside a router.
+
+_to_ prop can be a string, an object or a function, as per react-router documentation : https://v5.reactrouter.com/web/api/Link
+
+### Component usage
+```js
+<MemoryRouter>
+    <LinkButton 
+        to={link}
+        className={classNameToPass}
+        external={false}
+    >
+        Link !
+    </LinkButton>
+</MemoryRouter>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>to</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*href or object passed to react-router*</font> |
+| <font color='#4646c6'>className</font> | <font color="#397300">string</font> | &check; | - | <font color="grey">*link class name*</font> |
+| <font color='#4646c6'>external</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*if _true_, will render a plain anchor tag instead of react-router's Link*</font> |

@@ -1,0 +1,105 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.proposalHeader {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    position: static;
+    @include p(0, xs);
+    @include pl(3, xs);
+    @include pl(3, sm);
+    @include pb(2, xs);
+    @include pt(0, xs);
+}
+
+.proposalBlankButton {
+    @include py(2, xs);
+    @include px(2, xs);
+    min-width: 200px;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 100px);
+    z-index: 3;
+    max-width: 100%;
+    white-space: break-spaces;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: $box-border-radius;
+    background-color: $call-primary;
+    &:hover {
+      filter: brightness(110%);
+      background-color: $call-primary;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.proposalHeaderPlaceholderBox {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 80% !important;
+}
+
+.proposalPlaceholderRound {
+    height: 50px;
+    background: $darken-text-tertiary;
+    min-width: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.authorBox {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    @include pt(3, xs);
+    @include px(0, xs);
+    width: 67% !important;
+    position: static;
+}
+
+.proposalBlankBox {
+    width: 100% !important;
+    @include p(0, xs);
+    @include px(0, xs);
+    @include pt(0, xs);
+    @include pb(0, xs);
+    transition: margin-top 2s;
+    border-radius: $box-border-radius;
+    box-shadow: $box-shadow;
+    border: $box-border;
+    position: relative;
+}
+
+.proposalPlaceholder {
+    height: 20px;
+    background: $darken-text-tertiary;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.proposalPlaceholderMargin {
+    @extend .proposalPlaceholder;
+    @include mb(2, xs);
+}
+
+.proposalBody {
+    @include p(0, xs);
+    @include px(3, xs);
+    @include px(2, sm);
+    @include py(2, xs);
+    width: 100% !important;
+    font-size: $font-size-small;
+}
+
+.proposalContent {
+    text-align: left;
+    @include px(3, xs);
+    white-space: pre-line;
+    line-height: 1.5em;
+}

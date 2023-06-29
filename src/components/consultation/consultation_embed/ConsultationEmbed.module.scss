@@ -1,0 +1,89 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+.container {
+  display: flex !important;
+  flex-direction: column !important;
+  container-type: inline-size;
+  container-name: container;
+  border-radius: $box-border-radius;
+  border: $box-border;
+  box-shadow: $box-shadow;
+  background: white;
+  @include mb(4, xs);
+}
+
+.body {
+  display: flex !important;
+  flex-direction: row !important;
+  @include px(3, xs);
+  @include pb(3, xs);
+}
+
+.topProposal {
+  width: 100%;
+}
+
+.progressContainer {
+  @include mb(3, xs);
+}
+
+.progress {
+  height: 15px;
+  @include mt(2, xs);
+}
+
+.callToAction {
+  padding: 12px !important;
+  text-align: center;
+}
+
+.leftColumn {
+  display: flex !important;
+  flex-direction: column !important;
+  @include mr(3, xs);
+  width: 70%;
+}
+
+.readMoreButton {
+  display: flex !important;
+  align-items: flex-start !important;
+  font-weight: $font-weight-bold;
+  color: $text-primary !important;
+  text-decoration: none !important;
+  @include mt(3, xs);
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline !important;
+  }
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.footerButton { 
+  display: none !important;
+  padding: 12px !important;
+  text-align: center;
+}
+
+@container container (max-width: 576px) {
+  .body {
+    flex-direction: column !important;
+  }
+
+  .leftColumn {
+    width: 100%;
+    @include mb(3, xs);
+  }
+
+  .readMoreButton, .callToAction {
+    display: none !important;
+  }
+
+  .footerButton {
+    display: block !important;
+    @include mt(3, xs);
+  }
+}

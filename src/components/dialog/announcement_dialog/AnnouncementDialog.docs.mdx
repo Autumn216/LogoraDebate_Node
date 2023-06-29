@@ -1,0 +1,30 @@
+---
+description: A component to display an announcement message.
+---
+
+import { AnnouncementDialog } from './AnnouncementDialog';
+
+A component that shows a message with message prop or children.
+
+### Component usage
+```js
+import AnnouncementDialog from '@logora/debate.dialog.announcement_dialog';
+```
+```js
+<AnnouncementDialog 
+    icon={Icon}
+    message={"Your text"}
+    className={classNameToPass}
+    fullWidth={true}
+    iconClassName={iconClassNameToPass}
+/>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>icon</font> | <font color="#397300">icon</font> | &cross; | - | <font color="grey">*icon to display*</font> |
+| <font color='#4646c6'>message</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*message of the dialog, can pass children instead*</font> |
+| <font color='#4646c6'>className</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*extra classname*</font> |
+| <font color='#4646c6'>fullWidth</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*width 100%*</font> |
+| <font color='#4646c6'>iconClassName</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*icon extra classname*</font> |

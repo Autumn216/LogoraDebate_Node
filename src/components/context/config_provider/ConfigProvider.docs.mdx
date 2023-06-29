@@ -1,0 +1,32 @@
+---
+description: A context provider to store configuration and routes.
+labels: ['config', 'config-provider']
+---
+
+import { ConfigProvider } from './ConfigProvider';
+import { useConfig } from './useConfig';
+import { useRoutes } from './useRoutes';
+
+ConfigProvider is a context component to store configuration variables and routes.
+
+To use the context, first wrap your application with _ConfigProvider_. Then, use _useConfig_ and _useRoutes_ hooks to get config and routes.
+
+### Component usage
+```js
+const ComponentWithConfig = () => {
+	const config = useConfig();
+	const routes = useRoutes();
+
+	return <div>Hello world</div>;
+}
+
+<ConfigProvider config={layout: "compact"}>
+    <ComponentWithConfig />
+</ConfigProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>config</font> | <font color="#397300">object</font> | &cross; | - | <font color="grey">*Config object to store*</font> |
+| <font color='#4646c6'>routes</font> | <font color="#397300">object</font> | &cross; | - | <font color="grey">*Routes object to store*</font> |

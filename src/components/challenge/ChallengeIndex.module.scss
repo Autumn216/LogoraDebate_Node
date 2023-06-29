@@ -1,0 +1,63 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .header {
+        @include display(flex, xs);
+        @include justify-content(space-between, md);
+        @include align-items(center, md);
+        @include p(3, xs);
+        @include my(3, xs);
+        text-align: justify;
+        border: $box-border;
+        box-shadow: $box-shadow;
+        border-radius: $box-border-radius;
+        @include media-breakpoint-down(sm) {
+			@include flex-direction(column, xs);
+		}
+        .title {
+            @include mb(2, xs);
+            font-size: 24px;
+            font-weight: $font-weight-bold;
+            font-family: $title-font-family;
+        }
+
+        .description {
+            @include mr(3, xs);
+            text-align: initial;
+        }
+
+        .createButton {
+            @include display(flex, xs);
+            @include align-items(center, xs);
+            @include p(3, xs);
+            background-color: $call-primary;
+            color: white;
+            border-radius: $box-border-radius;
+            cursor: pointer;
+            font-size: $font-size-small;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            @include media-breakpoint-down(sm) {
+                @include mt(3, xs);
+            }
+            &:hover {
+                filter: brightness(110%);
+            }
+            .buttonTitle {
+                white-space: nowrap;
+            }
+            .buttonIcon {
+                @include mr(1, xs);
+                font-size: 25px;
+                font-weight: $font-weight-normal;
+            }
+        }
+    }
+
+    .listContainer {
+        @include mb(3, xs);
+    }
+}

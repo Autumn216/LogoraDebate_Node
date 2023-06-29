@@ -1,0 +1,193 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .textEditorContainer {
+        display: flex;
+        @include flex-direction(row, xs);
+        &.active {
+            @include flex-direction(column, xs);
+        }
+    }
+
+    .textEditor {
+        border-radius: $box-border-radius;
+        background-color: white;
+        min-height: 3em;
+        width: 100%;
+        word-break: break-word;
+        @include px(2, xs);
+        @include px(0, sm);
+        @include pt(3, xs);
+        @include media-breakpoint-up(sm) {
+            padding-top: 0.75em !important;
+        }
+        cursor: text;
+    }
+
+    .textEditor:hover {
+        border-color: $darkest-text-tertiary !important;
+    }
+
+    .textEditorControlBar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        &.active {
+            @include mt(2, xs);
+            @include pt(2, xs);
+            border-top: 1px solid $darken-text-tertiary;
+        }
+    }
+
+    .actionControlBar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .styleControlBar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .inputSourceAction {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include justify-content(center, xs);
+        @include align-items(center, xs);
+        @include p(0, xs);
+        @include pr(1, xs);
+        color: $call-primary;
+    }
+
+    .inputSourceActionButton {
+        width: 100%;
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include justify-content(center, xs);
+        @include align-items(center, xs);
+        font-size: $font-size-small;
+        border-width: 1px;
+        height: 35px;
+        @include media-breakpoint-up(sm) {
+            min-width: 10em;
+        }
+        > svg {
+            fill: $call-primary;
+        }
+        & .inputSourceText {
+            @include display(none, xs);
+            @include display(block, sm);
+        }
+        &.shortActionButton {
+            min-width: unset;
+            & .inputSourceText {
+                @include display(block, xs);
+            }
+        }
+    }
+
+    .inputSubmitAction {
+        @include p(0, xs);
+        @include pl(1, xs);
+    }
+
+    .inputSubmitActionButton {
+        width: 100%;
+        @include media-breakpoint-up(sm) {
+            min-width: 10em;
+            &.shortActionButton {
+                min-width: unset;
+            }
+        }
+        height: 35px;
+        @include display(flex, xs);
+        @include justify-content(center, xs);
+        @include align-items(center, xs);
+        & .inputSubmitIcon {
+            @include display(none, sm);
+        }
+        & .inputSubmitText {
+            @include display(none, xs);
+            @include display(block, sm);
+        }
+        &.shortActionButton {
+            & .inputSubmitIcon {
+                @include display(block, sm);
+            }
+        }
+    }
+
+    button.inputSubmitActionButton svg {
+        fill: white !important;
+        fill-rule: evenodd;
+    }
+
+    .sourcesBox {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include justify-content(flex-start, xs);
+        @include align-items(center, xs);
+        @include mt(2, xs);
+        @include px(2, xs);
+        @include py(2, xs);
+        border-top: 1px solid $darken-text-tertiary;
+    }
+
+    .sourcesBoxHeader {
+        @include display(flex, xs);
+        @include flex-direction(row, xs);
+        @include justify-content(center, xs);
+        @include align-items(center, xs);
+        @include pl(0, xs);
+        @include pr(2, xs);
+        @include py(2, xs);
+    }
+
+    .sourcesBoxHeader svg {
+        fill: $text-primary;
+        fill-rule: evenodd;
+    }
+
+    .sourceList {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include justify-content(flex-start, xs);
+        @include align-items(flex-start, xs);
+        @include px(0, xs);
+        @include py(0, xs);
+    }
+
+    .styleButton {
+        color: $text-secondary;
+        cursor: pointer;
+        display: inline-block;
+        @include mr(3, xs);
+        @include mr(3, sm);
+        & svg {
+            fill: $text-primary;
+            fill-rule: evenodd;
+        }
+    }
+
+    .shortBar .styleButton {
+        @include mr(1, xs);
+    }
+
+    .activeButton {
+        & svg {
+            fill: black;
+            fill-rule: evenodd;
+        }
+    }
+
+    :global(blockquote) {
+        border-left: 5px solid #eee;
+        color: #666;
+        font-style: italic;
+        padding: 10px 20px;
+    }
+}

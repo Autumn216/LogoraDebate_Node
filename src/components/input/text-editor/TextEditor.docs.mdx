@@ -1,0 +1,44 @@
+---
+description: A text editor component.
+labels: ['input', 'text editor']
+---
+
+import { TextEditor } from './TextEditor';
+
+A component that renders a input for text edition with rich content options : 
+- bold
+- italic
+- underline
+- quote
+- ordered list
+
+### Component usage
+```js
+import TextEditor from "@logora/debate.input.text-editor";
+```
+```js
+<TextEditor 
+    handleChange={handleChange}
+    placeholder={"Your placeholder"}
+    onSubmit={(textContent, richContent, sources) => console.log(textContent)}
+    onActivation={() => console.log("Activated !")}
+    disabled={false}
+/>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>placeholder</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*input placeholder*</font> |
+| <font color='#4646c6'>onAddSource</font> | <font color="#397300">function</font> | &cross; | - | <font color="grey">*pass function to add a link*</font> |
+| <font color='#4646c6'>onSubmit</font> | <font color="#397300">function</font> | &cross; | - | <font color="grey">*pass function to add an argument*</font> |
+| <font color='#4646c6'>sources</font> | <font color="#397300">array</font> | &cross; | - | <font color="grey">*array that contains sources*</font> |
+| <font color='#4646c6'>hideSubmit</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*if true, hide submit button*</font> |
+| <font color='#4646c6'>hideSourceAction</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*if true, hide source button*</font> |
+| <font color='#4646c6'>onActivation</font> | <font color="#397300">function</font> | &cross; | - | <font color="grey">*callback for input activation*</font> |
+| <font color='#4646c6'>disabled</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*if true, disabled input*</font> |
+| <font color='#4646c6'>uid</font> | <font color="#397300">string</font> | &cross; | - | <font color="grey">*message's uid*</font> |
+| <font color='#4646c6'>handleChange</font> | <font color="#397300">function</font> | &cross; | - | <font color="grey">*update text*</font> |
+| <font color='#4646c6'>displayContent</font> | <font color="#397300">function</font> | &cross; | - | <font color="grey">*add content in editor*</font> |
+| <font color='#4646c6'>shortBar</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*less space between icons*</font> |
+| <font color='#4646c6'>showStylesControls</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*show editor as active with rich text options*</font> |

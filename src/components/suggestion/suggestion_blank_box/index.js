@@ -1,0 +1,1 @@
+export { SuggestionBlankBox } from './SuggestionBlankBox';

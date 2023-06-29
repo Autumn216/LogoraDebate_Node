@@ -1,0 +1,25 @@
+---
+description: A footer component.
+---
+
+import { Footer } from './Footer';
+import { IntlProvider } from 'react-intl';
+
+A footer component.
+
+It should be wrapped around [react-intl](https://formatjs.io/docs/getting-started/installation/)'s IntlProvider.
+
+### Component usage
+```js
+import Footer from '@logora/debate.footer.footer';
+```
+```js
+<IntlProvider locale="en">
+    <Footer hideMargins={true}/>
+</IntlProvider>
+```
+
+### Properties
+| **Name**      | **Type** | **Required** | **Default** | **Description** |
+| ----------- | ----------- | :-----------: | ----------- | ----------- |
+| <font color='#4646c6'>hideMargins</font> | <font color="#397300">boolean</font> | &cross; | false | <font color="grey">*margins for texts*</font> |

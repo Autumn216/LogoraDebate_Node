@@ -1,0 +1,86 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .userBoxContainer {
+        @include display(flex, xs);
+        @include flex-direction(column, xs);
+        @include align-items(center, xs);
+        @include justify-content(space-between, xs);
+        @include p(4, xs);
+        border-radius: $box-border-radius;
+        width: 100%;
+        color: white;
+        text-align: center;
+        font-size: $font-size-small;
+        position: relative;
+        &.position-1 {
+            background-color: $for-primary;
+        }
+        &.position-2 {
+            background-color: $against-primary;
+        }
+    }
+
+    .isFinished {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include justify-content(center, xs);
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        background-color: white;
+        width: 31px;       
+        height: 22px;
+        border-radius: 0 $box-border-radius 0 $box-border-radius;
+        svg {
+            fill: #FCBD11;
+        }
+    }
+
+    .userImage img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .userName {
+        @include my(2, xs);
+        width: 100%;
+        overflow-x: hidden;
+        font-weight: $font-weight-bold;
+        cursor: pointer;
+    }
+
+    .userPoints {
+        @include display(flex, xs);
+        @include align-items(center, xs);
+        @include mb(3, xs);
+        svg {
+            @include ml(1, xs);
+            circle {
+                stroke: white;
+            }
+            path {
+                fill: white;
+            }
+        }
+    }
+
+    .userGroup {
+        @include px(2, xs);
+        @include py(1, xs);
+        border-radius: $box-border-radius;
+        background-color: white;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        &.position-1 {
+            color: $for-primary;
+        }
+        &.position-2 {
+            color: $against-primary;
+        }
+    }
+}

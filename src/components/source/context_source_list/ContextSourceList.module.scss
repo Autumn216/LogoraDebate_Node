@@ -1,0 +1,69 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+
+.container {
+    @include mb(4, xs);
+    background-color: white;
+    box-shadow: $box-shadow;
+    border: $box-border;
+    border-radius: $box-border-radius;
+}
+
+.header {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: space-between !important;
+    @include px(3, xs);
+    @include py(2, xs);
+    background-color: $call-primary;
+    color: white;
+    border-radius: $box-border-radius $box-border-radius 0 0;
+    font-size: $font-size-normal;
+    cursor: pointer;
+    &.headerClosed {
+        border-radius: $box-border-radius;
+    }
+    svg {
+        display: block;
+        fill: white;
+        rotate: 180deg;
+    }
+    .svgClosed {
+        rotate: -180deg;
+    }
+}
+
+.title {
+    @include px(3, xs);
+    @include pt(2.5, xs);
+    @include pb(3, xs);
+    span {
+        position: relative;
+        &::after {
+            content: "";
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            bottom: -5px;
+            left: 0px;
+            border-radius: $box-border-radius;
+            background-color: $call-primary;
+        }
+    }
+}
+
+.content {
+    @include px(3, xs);
+    @include pb(2, xs);
+}
+
+.box {
+    transition: opacity 1s;
+    opacity:1;
+}
+
+.boxClosed {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+}

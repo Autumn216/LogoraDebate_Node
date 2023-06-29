@@ -1,0 +1,1 @@
+export { AuthorBoxSmall } from './AuthorBoxSmall';

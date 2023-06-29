@@ -1,0 +1,59 @@
+@import '~@logora/debate.styles.theme/_theme.scss';
+@import '~@logora/debate.styles.spacing/_spacing.scss';
+@import '~@logora/debate.styles.flex/_flex.scss';
+@import '~@logora/debate.styles.display/_display.scss';
+
+:global(.logoraContainer) {
+    .container {
+        font-size: $font-size-small;
+        border-bottom: 1px solid;
+        border-color: $call-primary;
+    }
+    .theme {
+        @include pl(1, xs);
+        @include pr(3, xs);
+        @include mt(2.5, xs);
+        @include mb(3, xs);
+        width: fit-content;
+        font-weight: $font-weight-bold;
+        position: relative;
+        &::after {
+            background-color: $call-primary;
+            opacity: .3;
+            content: "";
+            width: 100%;
+            height: 9px;
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            border-radius: $box-border-radius;
+            transform: rotate(-2deg);
+        }
+    }
+    .title {
+        font-weight: $font-weight-bold;
+    }
+    .authorName {
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+    .authorImage {
+        @include mx(1, xs);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    .content {
+        @include my(2, xs);
+        @include mb(3, xs);
+        .readAction {
+            @include ml(1, xs);
+            font-weight: $font-weight-bold;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
